@@ -27,7 +27,7 @@
 
       <h2>The Project</h2>
       <h3>Description</h3>
-      From the <a href="https://www.datacamp.com/projects/684">website</a>.
+      From the <a href="https://www.datacamp.com/projects/684">DataCamp website for this project</a>.
       <blockquote cite="https://projects.datacamp.com/projects/684">
         "Whether or not you like football, the Super Bowl is a spectacle. There's drama in the form of blowouts, comebacks, and controversy in the games themselves. There are the ridiculously expensive ads, some hilarious, others gut-wrenching, thought-provoking, and weird. The half-time shows with the biggest musicians in the world, sometimes riding giant mechanical tigers or leaping from the roof of the stadium. And in this project, you will find out how some of the elements of this show interact with each other. You will answer questions like:
         <ul>
@@ -49,16 +49,36 @@
       </ul>
 
       <h3>Analysis</h3>
+      <h4>Exercises</h4>
+        The exercises guide the student through a series of tasks.
       <ul>
-        <li>Exercises in the worksheet</li>
-        <li>pandas query statement versus masks</li>
-        <li>From inspecting the project as saved to a website, I get an idea of how they automate the grading of worksheets. DataCamp’s autograding mechanism could be useful information for grading my own classes, and I expect serve as good examples of best practices in unit testing.</li>
+            <li>Import the pandas library</li>
+            <li>Loading the data (listed above) into three data frames using pd.read_csv()</li>
+            <li>Use df.info to identify missing data</li>
+            <li>Look at the distribution of combined points.
+              <ul>
+                <li>Make a histogram using matplotlib. This allows you to see what the highest and lowest bins are.</li>
+                <li>Query the highest and lowest bins. The worksheet used masks for the filtering. I rewrote these statements witht the query statement, which I find less clunky to use.</li>
+              </ul>
+            <li>Do blowouts lead to lost viewers? If the outcome of the game is all but certain early on, the suspense goes out of the game and viewers leave early. Does the data support this theory?</li>
+              <ul>
+                <li>Examine the distribution of point spread using another histogram.</li>
+                <li>Inspect a scatterplot of point spread over household share. The graph is not conclusive, but it suggests that the theory could be true.</li>
+              </ul>
+            <li>Examine trends of average number of viewers, household rating, and ad money spent</li>
+            <li>Look at halftime performances</li>
+              <ul>
+                <li>Who had the most appearances?</li>
+                <li>Who performed the most songs?</li>
+              </ul>
       </ul>
+
+      <!-- <h4>Observations</h4>
 
       <h3>Conclusions</h3>
       <ul>
         <li>I am not a sports fan, which in St. Louis takes a fair bit of effort. Sure, I'll watch a game with friends and enjoy the crowd and the comraderie, but keeping up game by game with the stats and latest happenings? That's just too much like work. I'd rather do other things, for instance, write a blog. So I was not aware that the "left shark" was a thing. Ha! Good for him.</li>
-      </ul>
+      </ul> -->
     </div>
 
     <div style="margin:20mm">
