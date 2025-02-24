@@ -121,6 +121,14 @@ article {
   width: 90%;
 }
 
+.left_about {
+  width: 40%;
+}
+
+.right_about {
+  width: 60%;
+}
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
