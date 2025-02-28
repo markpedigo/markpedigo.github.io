@@ -20,7 +20,7 @@
 <hr>
 
 <h1>Exploring Julia Sets with Python</h1>
-<img src="julia.jpeg" alt="Julia Set">
+<p><img src="julia.jpeg" alt="Julia Set"></p>
 
 <p>In the 1990s, I was a young Gen Xer, Nirvana smelled like teen spirit, OJ Simpson pervaded the news, Seinfeld was the hottest thing on TV, and fractals were everywhere in the popular imagination — on posters, on TV, in the mountains of the latest Star Trek movie, on aspiring programmers' computer screens.</p>
 
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     plot_julia_set(julia_set, C)
 </pre>
 
-<p>This code block has only two functions: create_julia_set(...) and plot_julia_set(...). They are both straightforward.</p>
+<p>This code block has only two functions: <code>create_julia_set(...)</code> and <code>plot_julia_set(...)</code>. They are both straightforward.</p>
 
 <p>The function create_julia_set(...) first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we've arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The function plot_julia_set(...) contains simple matplotlib code to get the image onto the screen.</p>
 
@@ -98,10 +98,10 @@ if __name__ == "__main__":
 
 
 <p>When \(C = -1\), we get a Julia Set with (infinitely) many loops.</p>
-<img src="julia_many_loops.jpeg" alt="Julia Set with Many Loops">
+<p><img src="julia_many_loops.jpeg" alt="Julia Set with Many Loops"></p>
 
 <p>As \(C\) becomes larger, the set breaks up into a totally disconnected “fractal dust.”</p>
-<img src="fractal_dust.jpeg" alt="Fractal Dust">
+<p><img src="fractal_dust.jpeg" alt="Fractal Dust"></p>
 
 <h2>Conclusion</h2>
 <p>I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of \(C\) to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.</p>
