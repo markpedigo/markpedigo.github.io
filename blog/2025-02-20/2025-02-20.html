@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../style.css">
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <title>Exploring Julia Sets with Python</title>
   </head>
 
 <body>
@@ -16,16 +17,18 @@
 
 <p>This article originally appeared on <a href="https://markpedigo.medium.com/exploring-julia-sets-with-python-d07144cf4ee2" target="_blank">Medium</a> [paywalled].</p>
 
+<h1>Exploring Julia Sets with Python</h1>
+
 <p>In the 1990s, I was a young Gen Xer, Nirvana smelled like teen spirit, OJ Simpson pervaded the news, Seinfeld was the hottest thing on TV, and fractals were everywhere in the popular imagination — on posters, on TV, in the mountains of the latest Star Trek movie, on aspiring programmers' computer screens.</p>
 
 <p>They certainly look cool, but what are fractals? The short answer is that they are mathematical shapes that exhibit self-similarity at different scales, meaning their patterns repeat infinitely in smaller and smaller versions, often resulting in complex, intricate structures. A more comprehensive answer can be found readily on the from ChatGPT, in countless books, or from many sources on the internet, including my review of “Fractals: A Very Short Introduction.”</p>
 
-<h1>Julia Sets</h1>
+<h2>Julia Sets</h2>
 <p>Consider the function z → z². Let’s take a complex point, say z = 1 + 2i, and iterate it over this function. We get 1 + 2i → 3 + 4i → -7 - 24i → -527 + 336i and so forth. Each iteration gets larger and larger and will eventually diverge to infinity. Let’s try another z, say z = 0.5 + 0.5i. Now, let’s consider z = i. Its iterates are i → -1 → 1 → 1 → …. So the iterates of z = i converge to 1.</p>
 
 <p>A similar function is z → z² + C for some fixed value of C. We can play the same game and see which points diverge and which ones do not. This is the idea behind the Julia set. Fix a value of C and look at the points in the complex plane. Color each point according to how quickly it escapes (or doesn’t) to infinity.</p>
 
-<h1>Python Code</h1>
+<h2>Python Code</h2>
 <p>It is not too difficult to write Python code for this process. Here's an example.</p>
 
 <pre class="prettyprint">
@@ -84,21 +87,21 @@ if __name__ == "__main__":
 
 <p>Try the code with C = -0.7 + 0.27015i. The result should be the image at the top of the article.</p>
 
-<h1>Explorations</h1>
+<h2>Explorations</h2>
 <p>Let’s try some examples and see what we get.</p>
 
 <p>Let C = -0.6–0.3i. The result is a Julia set with a single loop.</p>
 
 
-<h1>Julia Set with One Loop</h1>
+<h2>Julia Set with One Loop</h2>
 <p>When C = -1, we get a Julia Set with (infinitely) many loops.</p>
 
-<h1>Julia Set with Many Loops</h1>
+<h2>Julia Set with Many Loops</h2>
 <p>As C becomes larger, the set breaks up into a totally disconnected “fractal dust.”</p>
 
 Fractal Dust
 
-<h1>Conclusion</h1>
+<h2>Conclusion</h2>
 <p>I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of C to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.</p>
 
 <p>So, what’s next? Try experimenting with different values of C and see what results you get. It’s a fascinating process. Once you start, you may never stop.</p>
