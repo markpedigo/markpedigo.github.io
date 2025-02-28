@@ -9,7 +9,7 @@
     <script type="text/javascript" src="prettify.js"></script>  
   </head>
 
-<body>
+<body onload="prettyPrint()">
 
 <section>
 <article>
@@ -26,7 +26,7 @@
 <h3>Python Code</h3>
 <p>It is not too difficult to write Python code for this process. Here's an example.</p>
 
-<code>
+<pre class="prettyprint">
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     # Plot the Julia set.
     plot_julia_set(julia_set, C)
-</code>
+</pre>
 
 <p>This code block has only two functions: create_julia_set(...) and plot_julia_set(...). They are both straightforward.</p>
 
