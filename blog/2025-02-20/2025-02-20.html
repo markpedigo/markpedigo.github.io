@@ -28,9 +28,9 @@
 <p>They certainly look cool, but what are fractals? The short answer is that they are mathematical shapes that exhibit self-similarity at different scales, meaning their patterns repeat infinitely in smaller and smaller versions, often resulting in complex, intricate structures. A more comprehensive answer can be found readily on the from ChatGPT, in countless books, or from many sources on the internet, including my review of “Fractals: A Very Short Introduction.”</p>
 
 <h2>Julia Sets</h2>
-<p>Consider the function z → z². Let's take a complex point, say z = 1 + 2i, and iterate it over this function. We get \(1 + 2i \Rightarrow 3 + 4i → -7 - 24i → -527 + 336i\) and so forth. Each iteration gets larger and larger and will eventually diverge to infinity. Let's try another z, say z = 0.5 + 0.5i. Now, let's consider z = i. Its iterates are i → -1 → 1 → 1 → …. So the iterates of z = i converge to 1.</p>
+<p>Consider the function \( z \rightarrow z^2 )\. Let's take a complex point, say z = 1 + 2i, and iterate it over this function. We get \(1 + 2i \rightarrow 3 + 4i \rightarrow -7 - 24i \rightarrow -527 + 336i\) and so forth. Each iteration gets larger and larger and will eventually diverge to infinity. Now, let's consider \( z = i )\. Its iterates are \( i \rightarrow -1 \rightarrow 1 \rightarrow 1 \rightarrow \cdots \). So the iterates of (\ z = i \) converge to 1.</p>
 
-<p>A similar function is z → z² + C for some fixed value of C. We can play the same game and see which points diverge and which ones do not. This is the idea behind the Julia set. Fix a value of C and look at the points in the complex plane. Color each point according to how quickly it escapes (or doesn't) to infinity.</p>
+<p>A similar function is \( z \rightarrow z^2 + C )\ for some fixed value of \( C \). We can play the same game and see which points diverge and which ones do not. This is the idea behind the Julia set. Fix a value of \( C \) and look at the points in the complex plane. Color each point according to how quickly it escapes (or doesn't) to infinity.</p>
 
 <h2>Python Code</h2>
 <p>It is not too difficult to write Python code for this process. Here's an example.</p>
@@ -85,30 +85,30 @@ if __name__ == "__main__":
     plot_julia_set(julia_set, C)
 </pre>
 
-<p>This code block has only two functions: create_julia_set(...) and plot_julia_set(...). They are both straightforward.</p>
+<p>This code block has only two functions: <pre>create_julia_set(...)</pre> and <pre>plot_julia_set(...)</pre>. They are both straightforward.</p>
 
-<p>The function create_julia_set(...) first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we've arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The plot_julia_set(...) is some simple matplotlib code to get the image onto the screen.</p>
+<p>The function <pre>create_julia_set(...)</pre> first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we've arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The function <pre>plot_julia_set(...)</pre> contains simple matplotlib code to get the image onto the screen.</p>
 
-<p>Try the code with C = -0.7 + 0.27015i. The result should be the image at the top of the article.</p>
+<p>Try the code with \( C = -0.7 + 0.27015i \). The result should be the image at the top of the article.</p>
 
 <h2>Explorations</h2>
 <p>Let's try some examples and see what we get.</p>
 
-<p>Let C = -0.6–0.3i. The result is a Julia set with a single loop.</p>
+<p>Let \( C = -0.6–0.3i \). The result is a Julia set with a single loop.</p>
 
 
 <h2>Julia Set with One Loop</h2>
-<p>When C = -1, we get a Julia Set with (infinitely) many loops.</p>
+<p>When \( C = -1 \), we get a Julia Set with (infinitely) many loops.</p>
 
 <h2>Julia Set with Many Loops</h2>
-<p>As C becomes larger, the set breaks up into a totally disconnected “fractal dust.”</p>
+<p>As \( C )\ becomes larger, the set breaks up into a totally disconnected “fractal dust.”</p>
 
 Fractal Dust
 
 <h2>Conclusion</h2>
-<p>I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of C to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.</p>
+<p>I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of \( C )\ to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.</p>
 
-<p>So, what's next? Try experimenting with different values of C and see what results you get. It's a fascinating process. Once you start, you may never stop.</p>
+<p>So, what's next? Try experimenting with different values of \( C )\ and see what results you get. It's a fascinating process. Once you start, you may never stop.</p>
 
 </article>
 </section>
