@@ -86,22 +86,22 @@ if __name__ == "__main__":
 
 <p>This code block has only two functions: <code>create_julia_set(...)</code> and <code>plot_julia_set(...)</code>. They are both straightforward.</p>
 
-<p>The function create_julia_set(...) first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we've arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The function plot_julia_set(...) contains simple matplotlib code to get the image onto the screen.</p>
+<p>The function <code>create_julia_set(...)</code> first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we've arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The function plot_julia_set(...) contains simple matplotlib code to get the image onto the screen.</p>
 
 <p>Try the code with \(C = -0.7 + 0.27015i\). The result should be the image at the top of the article.</p>
 
 <h2>Explorations</h2>
 <p>Let's try some examples and see what we get.</p>
 
-<p>Let \(C = -0.6–0.3i\). The result is a Julia set with a single loop.</p>
-<img src="julia_one_loop.jpeg" alt="Julia Set with One Loop">
+<p>Let \(C = -0.6–0.3i\). The result is a Julia set with a single loop.
+<img src="julia_one_loop.jpeg" alt="Julia Set with One Loop"></p>
 
 
-<p>When \(C = -1\), we get a Julia Set with (infinitely) many loops.</p>
-<p><img src="julia_many_loops.jpeg" alt="Julia Set with Many Loops"></p>
+<p>When \(C = -1\), we get a Julia Set with (infinitely) many loops.
+<img src="julia_many_loops.jpeg" alt="Julia Set with Many Loops"></p>
 
-<p>As \(C\) becomes larger, the set breaks up into a totally disconnected “fractal dust.”</p>
-<p><img src="fractal_dust.jpeg" alt="Fractal Dust"></p>
+<p>As \(C\) becomes larger, the set breaks up into a totally disconnected “fractal dust.”
+<img src="fractal_dust.jpeg" alt="Fractal Dust"></p>
 
 <h2>Conclusion</h2>
 <p>I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of \(C\) to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.</p>
