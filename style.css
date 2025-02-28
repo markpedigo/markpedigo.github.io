@@ -6,6 +6,18 @@ body {
   color: #505962;
 }
 
+h1 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 32px;
+}
+
+h2 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 24px;
+}
+
 iframe {
   position: fixed;
   top: 0;
