@@ -1,0 +1,91 @@
+In the 1990s, I was a young Gen Xer, Nirvana smelled like teen spirit, OJ Simpson pervaded the news, Seinfeld was the hottest thing on TV, and fractals were everywhere in the popular imagination — on posters, on TV, in the mountains of the latest Star Trek movie, on aspiring programmers’ computer screens.
+
+They certainly look cool, but what are fractals? The short answer is that they are mathematical shapes that exhibit self-similarity at different scales, meaning their patterns repeat infinitely in smaller and smaller versions, often resulting in complex, intricate structures. A more comprehensive answer can be found readily on the from ChatGPT, in countless books, or from many sources on the internet, including my review of “Fractals: A Very Short Introduction.”
+
+<h1>Julia Sets</h1>
+Consider the function z → z². Let’s take a complex point, say z = 1 + 2i, and iterate it over this function. We get 1 + 2i → 3 + 4i → -7 - 24i → -527 + 336i and so forth. Each iteration gets larger and larger and will eventually diverge to infinity. Let’s try another z, say z = 0.5 + 0.5i. Now, let’s consider z = i. Its iterates are i → -1 → 1 → 1 → …. So the iterates of z = i converge to 1.
+
+A similar function is z → z² + C for some fixed value of C. We can play the same game and see which points diverge and which ones do not. This is the idea behind the Julia set. Fix a value of C and look at the points in the complex plane. Color each point according to how quickly it escapes (or doesn’t) to infinity.
+
+<h1>Python Code</h1>
+It is not too difficult to write Python code for this process. Here's an example.
+
+<code>
+import numpy as np
+import matplotlib.pyplot as plt
+
+def create_julia_set(C, width=800, height=800, max_iterations=256):
+    """
+    Function to define the Julia set for a given constant C.
+    """
+    # Define the complex plane
+    x_axis = np.linspace(-2, 2, width)
+    y_axis = np.linspace(-2, 2, height)
+    x, y = np.meshgrid(x_axis, y_axis)   
+    z = x + 1j * y 
+
+    # Initialize an array to store the iteration counts for the Julia set.
+    julia_set = np.zeros(z.shape, dtype=int)
+    
+    # Determine the iteration count for points in the plane.
+    for i in range(max_iterations):
+        # Throw out points that have "diverged."
+        mask = np.abs(z) < 2 
+
+        # Apply the Julia set formula.
+        z[mask] = z[mask] ** 2 + C  
+
+        # Increment the iteration count for points still in the set.
+        julia_set[mask] += 1  
+    
+    return julia_set
+
+
+def plot_julia_set(julia_set, C, figsize=(5,5)):
+    """
+    Function to plot the Julia set.
+    """
+    plt.figure(figsize=figsize)
+    plt.title(f'Julia Set for c = {C.real} + {C.imag}i')
+    plt.imshow(julia_set, cmap='inferno')
+    plt.show()
+
+
+if __name__ == "__main__":
+    # Generate the Julia set.
+    C = complex(-0.7, 0.27015)
+    julia_set = create_julia_set(C)
+
+    # Plot the Julia set.
+    plot_julia_set(julia_set, C)
+</code>
+
+This code block has only two functions: create_julia_set(...) and plot_julia_set(...). They are both straightforward.
+
+The function create_julia_set(...) first defines a complex plane with the x-axis (real axis) and complex axis (y-axis) both ranging from -2 to 2. An array is then initialized to store the iteration counts (i.e., how many times a function has been iterated and not flown off to infinity). At each iteration, we knock out points that are over some threshold (we’ve arbitrarily chosen 2). Then the formula is applied, and iteration counts iterated. The plot_julia_set(...) is some simple matplotlib code to get the image onto the screen.
+
+Try the code with C = -0.7 + 0.27015i. The result should be the image at the top of the article.
+
+<h1>Explorations</h1>
+Let’s try some examples and see what we get.
+
+Let C = -0.6–0.3i. The result is a Julia set with a single loop.
+
+
+<h1>Julia Set with One Loop</h1>
+When C = -1, we get a Julia Set with (infinitely) many loops.
+
+
+<h1>Julia Set with Many Loops</h1>
+As C becomes larger, the set breaks up into a totally disconnected “fractal dust.”
+
+
+Fractal Dust
+
+<h1>Conclusion</h1>
+I hope this article has been a fun dive into the world of fractals. We defined what Julia sets are, wrote a simple program, and then played around with different values of C to see how they shape the fractal. It is fascinating how much variety and complexity can emerge from a simple iterative process.
+
+So, what’s next? Try experimenting with different values of C and see what results you get. It’s a fascinating process. Once you start, you may never stop.
+
+
+Read this article on <a href="https://markpedigo.medium.com/exploring-julia-sets-with-python-d07144cf4ee2" target="_blank">Medium</a> [paywalled].
