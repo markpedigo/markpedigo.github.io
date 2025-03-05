@@ -38,14 +38,14 @@ import numpy as np
 <h1>What is a .csv file?</h1>
 <p>If we look at the data file in a text editor, the first few rows are as follows.</p>
 
-<output>
+<pre class="prettyprint">
 date,open,high,low,close,volume,Name
 2013–02–08,15.07,15.12,14.63,14.75,8407500,AAL
 2013–02–11,14.89,15.01,14.26,14.46,8882000,AAL
 2013–02–12,14.45,14.51,14.1,14.27,8126000,AAL
 2013–02–13,14.3,14.94,14.25,14.66,10259500,AAL
 2013–02–14,14.94,14.96,13.16,13.99,31879900,AAL
-</output>
+</pre>
 
 <p>We see that the first row consists of the column names, also known as <e>field</e> names. This row containing the column names is called the <e>header</e>. The next rows list data corresponding to each of those fields within its row. So the first line of data has a date of 2013-02-08, an open price of $15.07 and so on. Each data point is separated from the next point by a comma, hence the name "comma separated value" (csv) file.</p>
 
@@ -162,23 +162,14 @@ df.head()
 </pre>
 
 <pre class="prettyprint">
-	date	open	high	low	close	volume	Name
-0	2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-1	2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-2	2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
+    date	    open    high    low     close   volume      Name
+0	2013-02-08	15.07	15.12	14.63	14.75	8407500	    AAL
+1	2013-02-11	14.89	15.01	14.26	14.46	8882000	    AAL
+2	2013-02-12	14.45	14.51	14.10	14.27	8126000	    AAL
 3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
 4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL
 </pre>
     
-<pre class="prettyprint">
-date;open;high;low;close;volume;Name
-2013-02-08;15.07;15.12;14.63;14.75;8407500;AAL
-2013-02-11;14.89;15.01;14.26;14.46;8882000;AAL
-2013-02-12;14.45;14.51;14.1;14.27;8126000;AAL
-2013-02-13;14.3;14.94;14.25;14.66;10259500;AAL
-2013-02-14;14.94;14.96;13.16;13.99;31879900;AAL    
-</pre>
-
 <h1>Delimiters</h1>
 <p>Not all data files separate values using commas. Tabs, spaces, or any other character may be used. For instance, our data file might have been set up with semicolons instead of commas.</p>
 
@@ -199,7 +190,7 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-	date	open	high	low	close	volume	Name
+    date        open    high    low     close   volume     Name
 0	2013-02-08	15.07	15.12	14.63	14.75	8407500	   AAL
 1	2013-02-11	14.89	15.01	14.26	14.46	8882000	   AAL
 2	2013-02-12	14.45	14.51	14.10	14.27	8126000	   AAL
@@ -211,11 +202,11 @@ stocks_df.head()
 <p>If you don’t want the default index, you may specify a column to be used as the index of the data frame. For instance, to specify the index to be the date column, use <code>index_col='date'</code>.</p>
 
 <pre class="prettyprint">
-	open	high	low	close	volume	Name
+	        open    high    low     close   volume      Name
 date						
-2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
+2013-02-08	15.07	15.12	14.63	14.75	8407500	    AAL
+2013-02-11	14.89	15.01	14.26	14.46	8882000	    AAL
+2013-02-12	14.45	14.51	14.10	14.27	8126000	    AAL
 2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
 2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL   
 </pre>
@@ -288,12 +279,12 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-	date	    open	high	low	    close	volume	    Name
-0	2013-02-08	NaN	    NaN	    14.63	14.75	8407500	    AAL
-1	2013-02-11	14.89	NaN	    14.26	14.46	8882000	    AAL
-2	2013-02-12	14.45	14.51	?	    14.27	8126000	    AAL
-3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL    
+	data        open    high    low     close   volume      Name
+0	2013-02-08	NaN     NaN     14.63   14.75   8407500     AAL
+1	2013-02-11	14.89	NaN	    14.26	14.46	8882000     AAL
+2	2013-02-12	14.45	14.51	?	    14.27	8126000     AAL
+3	2013-02-13	14.30	14.94	14.25	14.66	10259500    AAL
+4	2013-02-14	14.94	14.96	13.16	13.99	31879900    AAL    
 </pre>
 
 <p>As you can see, there are two values missing from the first row of data and one from the second row. In addition, the third data row has a question mark in one of the entries. How do we deal with this?</p>
@@ -306,12 +297,12 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-    date	    open	high	low	    close	volume	    Name
-0	2013-02-08	NaN	    NaN	    14.63	14.75	8407500	    AAL
+    date       open     high    low     close   volume      Name
+0	2013-02-08	NaN     NaN     14.63   14.75   8407500     AAL
 1	2013-02-11	14.89	NaN	    14.26	14.46	8882000	    AAL
 2	2013-02-12	14.45	14.51	NaN	    14.27	8126000	    AAL
-3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL    
+3	2013-02-13	14.30	14.94	14.25	14.66	10259500    AAL
+4	2013-02-14	14.94	14.96	13.16	13.99	31879900    AAL    
 </pre>
 
 </p>Now the question mark has been read in as a NaN.</p>
