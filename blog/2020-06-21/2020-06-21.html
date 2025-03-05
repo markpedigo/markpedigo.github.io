@@ -107,12 +107,12 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-	2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-0	2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-1	2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
-2	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-3	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL
-4	2013-02-15	13.93	14.61	13.93	14.50	15628000	AAL
+	2013-02-08	15.07	15.12	14.63	14.75	8407500     AAL
+0	2013-02-11	14.89	15.01	14.26	14.46	8882000	    AAL
+1	2013-02-12	14.45	14.51	14.10	14.27	8126000	    AAL
+2	2013-02-13	14.30	14.94	14.25	14.66	10259500    AL
+3	2013-02-14	14.94	14.96	13.16	13.99	31879900    AAL
+4	2013-02-15	13.93	14.61	13.93	14.50	15628000    AAL
 </pre>
 
 </p>pandas assumes the first line is a header, and reads it in as such. In this case, this isn't what we want, since that first row is data. Fortunately, the fix is easy — just specify the option <code>header=None</code>.</p>
@@ -124,11 +124,11 @@ stocks_df.head()
 
 <pre class="prettyprint">
     0	1	2	3	4	5	6
-    0	2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-    1	2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-    2	2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
-    3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-    4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL
+    0	2013-02-08	15.07	15.12	14.63	14.75	8407500	    AAL
+    1	2013-02-11	14.89	15.01	14.26	14.46	8882000	    AAL
+    2	2013-02-12	14.45	14.51	14.10	14.27	8126000	    AAL
+    3	2013-02-13	14.30	14.94	14.25	14.66	10259500    AAL
+    4	2013-02-14	14.94	14.96	13.16	13.99	31879900    AAL
 </pre>
 
 <p>Now pandas has numbered the columns starting at 0. If you prefer to have named columns instead, use the names option to specify your own column names.</p>
@@ -139,13 +139,13 @@ stocks_df = pd.read_csv('stocks_no_header.csv', header=None, names=col_names)
 stocks_df.head()    
 </pre>
 
-<pre>
-	Date	Open	High	Low	Close	Volume	Ticker Symbol
-0	2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-1	2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-2	2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
-3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL   
+<pre class="prettyprint">
+	Date	Open	High	Low	Close	Volume	Ticker    Symbol
+0	2013-02-08	15.07	15.12	14.63	14.75	8407500	  AAL
+1	2013-02-11	14.89	15.01	14.26	14.46	8882000	  AAL
+2	2013-02-12	14.45	14.51	14.10	14.27	8126000	  AAL
+3	2013-02-13	14.30	14.94	14.25	14.66	10259500  AAL
+4	2013-02-14	14.94	14.96	13.16	13.99	31879900  AAL   
 </pre>
 
 <h1>Directories</h1>
@@ -170,15 +170,14 @@ df.head()
 4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL
 </pre>
     
-<pre>
-    date;open;high;low;close;volume;Name
-    2013-02-08;15.07;15.12;14.63;14.75;8407500;AAL
-    2013-02-11;14.89;15.01;14.26;14.46;8882000;AAL
-    2013-02-12;14.45;14.51;14.1;14.27;8126000;AAL
-    2013-02-13;14.3;14.94;14.25;14.66;10259500;AAL
-    2013-02-14;14.94;14.96;13.16;13.99;31879900;AAL    
+<pre class="prettyprint">
+date;open;high;low;close;volume;Name
+2013-02-08;15.07;15.12;14.63;14.75;8407500;AAL
+2013-02-11;14.89;15.01;14.26;14.46;8882000;AAL
+2013-02-12;14.45;14.51;14.1;14.27;8126000;AAL
+2013-02-13;14.3;14.94;14.25;14.66;10259500;AAL
+2013-02-14;14.94;14.96;13.16;13.99;31879900;AAL    
 </pre>
-
 
 <h1>Delimiters</h1>
 <p>Not all data files separate values using commas. Tabs, spaces, or any other character may be used. For instance, our data file might have been set up with semicolons instead of commas.</p>
@@ -194,20 +193,19 @@ date;open;high;low;close;volume;Name
 
 <p>To specify a separator other than a comma, use the sep option.</p>
 
-<pre class=""prettyprint>
+<pre class="prettyprint">
 stocks_df = pd.read_csv('stocks_semicolon.csv', sep=';')
 stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
 	date	open	high	low	close	volume	Name
-0	2013-02-08	15.07	15.12	14.63	14.75	8407500	AAL
-1	2013-02-11	14.89	15.01	14.26	14.46	8882000	AAL
-2	2013-02-12	14.45	14.51	14.10	14.27	8126000	AAL
-3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
-4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL
+0	2013-02-08	15.07	15.12	14.63	14.75	8407500	   AAL
+1	2013-02-11	14.89	15.01	14.26	14.46	8882000	   AAL
+2	2013-02-12	14.45	14.51	14.10	14.27	8126000	   AAL
+3	2013-02-13	14.30	14.94	14.25	14.66	10259500   AAL
+4	2013-02-14	14.94	14.96	13.16	13.99	31879900   AAL
 </pre>
-
 
 <h1>Specifying a column to be the index</h1>
 <p>If you don’t want the default index, you may specify a column to be used as the index of the data frame. For instance, to specify the index to be the date column, use <code>index_col='date'</code>.</p>
@@ -225,21 +223,21 @@ date
 <p>Now the date column is the index, as desired.</p>
 
 <h1>Types</h1>
-<p>Let’s check the type of each column.</p>
+<p>Let's check the type of each column.</p>
 
 <pre class="prettyprint">
 stocks_df = pd.read_csv('stocks.csv')
 stocks_df.dtypes   
 </pre>
 
-<pre>
-date       object
-open      float64
-high      float64
-low       float64
-close     float64
-volume      int64
-Name       object
+<pre class="prettyprint">
+date    object
+open    float64
+high    float64
+low     float64
+close   float64
+volume  int64
+Name    object
 dtype: object
 </pre>
 
@@ -257,27 +255,27 @@ stocks_df = pd.read_csv('stocks.csv', dtype=types)
 stocks_df.dtypes   
 </pre>
 
-<pre>
-date       object
-open      float32
-high      float32
-low       float32
-close     float32
-volume      int32
-Name       object
+<pre class="prettyprint">
+date   object
+open   float32
+high   float32
+low    float32
+close  float32
+volume int32
+Name   object
 dtype: object   
 </pre>
 
 <p>The <code>date</code> column was read in as a generic object type, even though we know that the data consists of dates. To read the column in as date type, use the <code>parse_dates</code> option set to a list containing the index of the column.</p>
 
 <pre class="prettyprint">
-date      datetime64[ns]
-open             float64
-high             float64
-low              float64
-close            float64
-volume             int64
-Name              object
+date    datetime64[ns]
+open    float64
+high    float64
+low     float64
+close   float64
+volume  int64
+Name    object
 dtype: object  
 </pre>
 
@@ -290,10 +288,10 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-	date	open	high	low	close	volume	Name
-0	2013-02-08	NaN	NaN	14.63	14.75	8407500	AAL
-1	2013-02-11	14.89	NaN	14.26	14.46	8882000	AAL
-2	2013-02-12	14.45	14.51	?	14.27	8126000	AAL
+	date	    open	high	low	    close	volume	    Name
+0	2013-02-08	NaN	    NaN	    14.63	14.75	8407500	    AAL
+1	2013-02-11	14.89	NaN	    14.26	14.46	8882000	    AAL
+2	2013-02-12	14.45	14.51	?	    14.27	8126000	    AAL
 3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
 4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL    
 </pre>
@@ -308,10 +306,10 @@ stocks_df.head()
 </pre>
 
 <pre class="prettyprint">
-date	open	high	low	close	volume	Name
-0	2013-02-08	NaN	NaN	14.63	14.75	8407500	AAL
-1	2013-02-11	14.89	NaN	14.26	14.46	8882000	AAL
-2	2013-02-12	14.45	14.51	NaN	14.27	8126000	AAL
+    date	    open	high	low	    close	volume	    Name
+0	2013-02-08	NaN	    NaN	    14.63	14.75	8407500	    AAL
+1	2013-02-11	14.89	NaN	    14.26	14.46	8882000	    AAL
+2	2013-02-12	14.45	14.51	NaN	    14.27	8126000	    AAL
 3	2013-02-13	14.30	14.94	14.25	14.66	10259500	AAL
 4	2013-02-14	14.94	14.96	13.16	13.99	31879900	AAL    
 </pre>
