@@ -62,13 +62,13 @@ stocks_df = pd.read_csv('stocks.csv')
 stocks_df.head()    
 </pre>
 
-<pre>
+<pre class="prettyprint">
     date        open    high    low     close   volume      Name
 0   2013-02-08  15.07   15.12	14.63	14.75	8407500	    AL
 1   2013-02-11  14.89   15.01	14.26	14.46	8882000	    AAL
 2   2013-02-12  14.45   14.51	14.10	14.27	8126000	    AAL
-3   2013-02-13  14.30   14.94	14.25	14.66	10259500	AAL
-4   2013-02-14  14.94   14.96	13.16	13.99	31879900	AAL
+3   2013-02-13  14.30   14.94	14.25	14.66	10259500    AAL
+4   2013-02-14  14.94   14.96	13.16	13.99	31879900    AAL
 </pre>
 
 <p>You might not be interested in all the columns in the .csv file. In this case, specify which columns you want to read into the data frame by using the <code>usecols</code> option. For instance, if you're only interested in the date, the volume and the name of the stock, specify <code>usecols=['date', 'volume', 'Name']</code>.</p>
@@ -83,8 +83,8 @@ stocks_df.head()
 0	2013-02-08	8407500	    AAL
 1	2013-02-11	8882000	    AAL
 2	2013-02-12	8126000	    AAL
-3	2013-02-13	10259500 	AAL
-4	2013-02-14	31879900	AAL
+3	2013-02-13	10259500    AAL
+4	2013-02-14	31879900    AAL
 </pre>
     
 <p>As expected, only the columns we specified are included in the data frame.</p>
