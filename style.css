@@ -147,6 +147,13 @@ article {
   width: 60%;
 }
 
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
