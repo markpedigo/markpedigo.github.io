@@ -76,15 +76,13 @@ article {
   letter-spacing: .1rem;
   padding-top: .9rem;
   background-color: snow!important;
-  color: 'SteelBlue'!important;
-  /* background-color: white!important; */
-  /*background: rgba(0, 0, 0, 0.6)!important;*/
 }
 .navbar-brand img {
   height: 2rem;
 }
 .navbar-nav li {
   padding-right: .7rem;
+  color: 'SteelBlue';
 }
 
 /*--- Jumbotron ---*/
