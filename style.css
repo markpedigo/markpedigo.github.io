@@ -7,12 +7,14 @@ body {
 }
 
 h1 {
+  font: verdana;
   margin-top: 20px;
   font-weight: bold;
   font-size: 32px;
 }
 
 h2 {
+  font: verdana;
   margin-top: 20px;
   font-weight: bold;
   font-size: 24px;
