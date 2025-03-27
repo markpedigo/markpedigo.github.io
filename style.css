@@ -73,7 +73,8 @@ article {
   font-size: .9rem;
   letter-spacing: .1rem;
   padding-top: .9rem;
-  background-color: white!important;
+  background-color: snow!important;
+  /* background-color: white!important; */
   /*background: rgba(0, 0, 0, 0.6)!important;*/
 }
 .navbar-brand img {
