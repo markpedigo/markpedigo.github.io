@@ -27,6 +27,11 @@ a {
   color: steelblue;
 }
 
+.image-left {
+  float: left;
+  margin-right: 15px;
+}
+
 .center {
   display: block;
   margin-left: auto;
