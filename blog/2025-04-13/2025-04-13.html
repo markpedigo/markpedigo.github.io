@@ -14,7 +14,7 @@
 
 <section>
 <article>
-<p><em>February 20, 2025</em></p>
+<p><em>April 13, 2025</em></p>
 
 <p>(This article originally appeared on <a href="https://markpedigo.medium.com/exploring-julia-sets-with-python-d07144cf4ee2" target="_blank">Medium</a>.)</p>
 <hr>
@@ -22,7 +22,10 @@
 <h1>Exploring Julia Sets with Python</h1>
 <h2>Generating Complex Beauty Through Simple Code</h2>
 
-<img src="mandelbrot_set.jpeg" alt="The Mandelbrot Set" class="center">
+<p>
+    <img src="mandelbrot_set.jpeg" alt="The Mandelbrot Set" class="center">
+    <center>The Mandelbrot Set</center>
+</p>
 
 <p>
     In the 1990s, I was a young Gen Xer. Pearl Jam filled the air with "Jeremy." The <em>X-Files</em> convinced us the truth was out there. Fractals were everywhere you looked. You saw them on posters, TV, screensavers, and in the latest Star Trek movie.
@@ -124,9 +127,15 @@
     For any point C inside the Mandelbrot set, the Julia set with that value of C is connected, and for any point outside the Mandelbrot set, the Julia set is disconnected. For a given C, if z₀ = 0 stays bounded, the corresponding Julia set is connected, and if z₀ = 0 is unbounded, the corresponding Julia set is totally disconnected. Note that this link between Mandelbrot and Julia sets only holds for z₀ = 0.
 </p>
 
-<img src="connected_julia_set.jpeg" alt="Connected Julia Set" class="center">
+<p>
+    <img src="connected_julia_set.jpeg" alt="Connected Julia Set" class="center">
+    <center>Connected Julia Set</center>
+</p>
 
-<img src="disconnected_julia_set.jpeg" alt="Disconnected Julia Set" class="center">
+<p>
+    <img src="disconnected_julia_set.jpeg" alt="Disconnected Julia Set" class="center">
+    <center>Disconnected Julia Set</center>
+</p>
 
 <p>The Mandelbrot set uses the iteration rule z → z² + C. This formula is easily generalized to higher powers (say 3 or 4) for "Multibrot sets." In code, just update this line, using whatever power you're interested in.
 </p>
@@ -135,7 +144,10 @@
 z[mask] = z[mask] ** 3 + C[mask]
 </pre>
 
-<img src="multibrot_set_d=5.jpeg" alt="Multibrot Set with d=5" class="center">
+<p>
+    <img src="multibrot_set_d=5.jpeg" alt="Multibrot Set with d=5" class="center">
+    <center>Multibrot Set with d=5</center>
+</p>
 
 <p>
     We can also vary the initial value of z₀ = 0. The resulting sets are no longer Mandelbrot sets, but they're still interesting. The code only needs to be tweaked slightly. Change the signature to
@@ -150,13 +162,14 @@ def create_mandelbrot_set(width=800, height=800, max_iterations=256, z0=0 + 0j):
 
 and call with the desired value of z₀ = 0..
 
-mandelbrot = create_mandelbrot_set(z0=0.5 + 0.5j)
-
 <p>
     Let's try this with z₀ = -1 + 0.3j. We get the following graph.
 </p>
 
-<img src="mandelbrot_like.jpeg" alt="Mandelbrot-like set with z=-1+0.3j" class="center">
+<p>
+    <img src="mandelbrot_like.jpeg" alt="Mandelbrot-like set with z=-1+0.3j" class="center">
+    <center>Mandelbrot-like set with z=-1+0.3j</center>
+</p>
 
 <h1>Conclusion</h1>
 <p>
