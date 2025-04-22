@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Exploring Julia Sets with Python</title>
+  </head>
+
+<body>
+
+<section>
+<article>
+<p>
+    <em>April 13, 2025</em>
+</p>
+
+<p>
+    (This article originally appeared on <a href="https://baos.pub/how-i-met-bilbo-baggins-and-what-i-found-in-his-hobbit-hole-fe0dc1382f43" target="_blank">Books Are Our Superpower, Medium</a>.)
+</p>
+<hr>
+
+<h1>How I Met Bilbo Baggins and What I Found in His Hobbit Hole</h1>
+<h2>A shy kid, a borrowed world, and the book that changed everything</h2>
+
+<p>
+    I first met Bilbo Baggins when I was eight years old.
+</p>
+
+<p>
+    I grew up in Midwestern America in the early '70s on a farm about ten miles from the nearest small town. We had electricity, running water, and basic comforts, but we lived in a manner that today we would call mostly off the grid. We grew a significant part of our food in two huge gardens, raised livestock, and relied on ourselves for most of what we needed. We had dogs and horses, and a motley crew of feral cats that hung out in the barn.
+</p>
+
+<p>
+    All in all, it wasn't a bad way to grow up. I was safe, well cared for, and loved. I had an older brother and a few friends. My brother was six years older than I was, close enough in age to share a home, but far enough that we didn't have many interests in common. My friends were scattered across the countryside, and it required adult coordination to see them. A parent to sign off on the plan, drive us there, and eventually back again. Even biking didn't help much. The closest kid lived more than half an hour away, down a windy gravel road with steep hills.
+</p>
+
+<p>
+    So I spent a lot of time by myself. It was quiet, peaceful, even idyllic, but also, at times, a little lonely.
+</p>
+
+<p>
+     We were only allowed half an hour of TV a day, a little more if the show itself ran longer. One night, my mom and I watched the Rankin/Bass cartoon version of The Hobbit. It was wonderful. The animation, the heroic quest, the dragon, and especially the songs hooked little me. I still remember the goblins force-marching the dwarves, singing, “Where there's a whip — [crack, crack] — there's a way!” We laughed about that scene for ages.
+</p>
+
+<p>
+    That Christmas, my brother and I woke up early and crept into the living room to scope out our loot for the year. There were many presents, but one in particular caught my eye. It was book-shaped. It had my name on the paper, in spidery golden script.
+</p>
+
+<p>
+    My brother unwrapped all his gifts before our parents woke, then re-taped the paper to hide his crime. I, more cautious, waited for official clearance. Once we got the go-ahead, I tore open the paper of the package and there it was: the book version of The Hobbit.
+</p>
+
+<h1>The Adventure Begins</h1>
+<p>
+    That very Christmas day, I started reading the book. For eight-year-old me, it was a massive tome, nearly 300 pages! How was I ever going to finish this thing? And how had they crammed all that story into a 90-minute cartoon?
+</p>
+
+<p>
+    After what felt like years, I finally reached the last page. Bilbo had gone on a quest as a burglar, number fourteen in the company, to avoid the unlucky thirteen. He'd faced trolls, spiders, goblins, and riddled with Gollum. He found courage and heart, saved his friends, helped defeat a dragon, took home treasure, found a magic ring of invisibility, and returned a little bit wiser.
+</p>
+
+<p>
+    It was heady stuff. And best of all, I had finished it. My persistence paid off. My own small quest to finish the book, like Bilbo's to help the dwarves, was a success.
+</p>
+
+<h1>The Fellowship</h1>
+<p>
+    I told my buddies at school what I had found. Adventure! Dragons! Gold! Ya gotta read this thing, I told them. And some of them did.
+</p>
+
+<p>
+    We talked about the book. We drew our own maps and made up stories to go with them. We acted out our own adventures at recess. Before long, we branched out to other books and found ourselves in heated debates about who was better: the Hardy Boys or the Three Investigators.
+</p>
+
+<p>
+    (The Three Investigators, obviously. They had adventures with ghosts and pirates, and they knew Alfred Hitchcock personally. Plus, their leader, Jupiter Jones, lived in a junkyard and had access to all kinds of cool stuff. How could you possibly beat that? The Hardy Boys only had sweaters, flashlights, and mediocre cover art.)
+</p>
+
+<p>
+    Inevitably, we discovered The Lord of the Rings. Talk about a quest. It took us a few years to make our way through all three volumes. Not everyone made it to the end. For those who did, it was well worth the effort.
+</p>
+
+<h1>The Resistance</h1>
+<p>
+    Not all adults in our conservative community appreciated or understood our enthusiasm for elves, dwarves, and the slaying of dragons.
+</p>
+
+<p>
+    The next year, in fourth grade, our teacher would read aloud to the class during reading time. She'd occasionally take requests, so I asked her to read The Hobbit. She said it was much too long and would take forever to get through. I pressed her, and eventually she agreed, if reluctantly.
+</p>
+
+<p>
+    She made it through the first couple of chapters before quietly setting it aside in favor of shorter, easier books. But my friends and I weren't deterred. We campaigned for her to finish it, day after day, until she finally gave in. For two or three days, she read The Hobbit aloud for half the day, slogging through to the end. She read in a bored, flat tone that made it very clear she wasn't enjoying herself, but she read it.
+</p>
+
+<p>
+    Victory! A small one, perhaps, but it felt like a win for the power of imagination, and for enthusiasm over apathy. We pushed her to bring forth something magical, and she did, even if she didn't believe in it herself.
+</p>
+
+<h1>Thou Shalt Not Like Cool Stuff</h1>
+<p>
+    There was more resistance at the Methodist Sunday school. One Sunday morning, the teacher read something about a golden calf and worshiping man-made things instead of the Lord. I'm sure it was tied to the sermon that day, but it flew well over the kids' heads.
+</p>
+
+<p>
+    He went around the class, picking on each kid in turn. He asked Joe what he liked. Joe liked football. “You worship football!” the teacher declared. “You should worship the Lord!”
+</p>
+
+<p>
+    Then it was Susie's turn. She said she liked dolls. “You worship dolls!” he said. “You should worship the Lord!”
+</p>
+
+<p>
+    When he got to me, I said I couldn't think of anything. That wasn't good enough. He pressed and pressed until, just wanting him to shut up already, I muttered, “The Lord of the Rings.”
+</p>
+
+<p>
+    “You worship The Lord of the Rings!” he bellowed, triumphant. “You should worship the Lord!” He caught himself and sputtered, “The other one!”
+</p>
+
+<h1>A Multitude of Worlds</h1>
+<p>
+    The Hobbit opened me up to sharing my creativity and imagination with my buddies, some of who were at least as inventive as I was. Even the ones with the imagination of a small, nondescript rock played along, and we all enjoyed ourselves immensely.
+</p>
+
+<p>
+    Bilbo and his lot introduced me to whole worlds of imagination. I developed a lifelong love of reading. I read Asimov, Clarke, Heinlein, and Philip José Farmer. I read Mark Twain and Sir Arthur Conan Doyle. I read Carl Sagan. Later came Neal Stephenson, Gene Wolfe, Octavia Butler, and many, many others. In most of these stories, intelligence and wit overcome ignorance and buffoonery, reason over superstition.
+</p>
+
+<h1>Thag you very much</h1>
+<p>
+    I've been fortunate in many ways. I've had advantages that helped me navigate life successfully: a financially stable home, a strong support system, a knack for school, and friends who didn't tear me down.
+</p>
+
+<p>
+    Not everyone in our fellowship survived intact.
+</p>
+
+<p>
+    One of my buddies lived about twenty minutes on the far side of town, a full thirty-five minutes from my place. He lived in a dilapidated trailer with tires on the roof to keep the sheet metal from rattling loose in the wind or leaking when it rained. His mom was a sweet but timid woman; his dad was an enormous, intimidating hulk of a man who worked at the car factory an hour and a half away — when he had work, which wasn't always.
+</p>
+
+<p>
+    In the years that followed, my friend devoured every fantasy and science fiction book he could find. In high school, he fell into the “wild life” — too many parties, too many drugs, too much of the wrong crowd. I lost touch with him not long after we graduated. From what I've heard, he's had a rough go of it.
+</p>
+
+<p>
+    No one gets out of life alive, they say. Some don't even get a fair shot. I hope his reading gave him a place to breathe, some kind of healthy escape, if only for a little while.
+</p>
+
+<p>
+    Among my many advantages, I count exposure to the stories that helped shape who I am as one of the most important. They influenced my worldview, my academic path, and my career. I eventually earned a BS in Computer Science and a PhD in Mathematics. I've lived in different parts of the U.S. and Europe. I've taught at a major university and helped teams solve real-world problems in data science. I have a wonderful wife and a good life.
+</p>
+
+<p>
+    Thank you, Bilbo.
+</p>
+</article>
+</section>
+
+<!--- Script Source Files --->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+<html>
