@@ -1,19 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
-/*
-body {
-  overflow-x: hidden;
-  font-family: 'Lato', sans-serif;
-  color: #505962;
-  background-color: snow;
-}
-*/
-
 body {
   overflow-x: hidden;
   color: #505962;
   background-color: snow;
-  /* background-color: #f9f9f9; */
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -22,18 +12,8 @@ h1 {
   font: american typewriter;
   margin-top: 20px;
   color: #1a0000;
-  /* font-weight: bold; */
   font-size: 32px;
 }
-
-/*
-h2 {
-  font: american typewriter;
-  margin-top: 20px;
-  color: #1a0000;
-  font-size: 24px;
-}
-*/
 
 h2 {
   font: american typewriter;
@@ -44,12 +24,10 @@ h2 {
   padding-left: 10px;
 }
 
-
 h3 {
   font: american typewriter;
   margin-top: 20px;
   color: #1a0000;
-  /* font-weight: bold; */
   font-size: 16px;
 }
 
@@ -85,15 +63,6 @@ iframe {
 article {
   margin: 20mm;
 }
-
-/* article {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.03);
-  border-radius: 8px;
-} */
 
 hr {
   margin: 2rem 0;
@@ -140,7 +109,6 @@ hr {
 .jumbotron {
   margin-top: 5rem;
   height: 35rem;
-  /* background-color: rgba(69, 103, 115, 0.45); */
   background-color: rgba(0, 0, 0, 0);
 }
 .about {
@@ -228,12 +196,6 @@ th, td {
 .card.wiggle:hover {
   animation: wiggle 0.3s ease-in-out;
 }
-
-/*
-.card {
-  min-height: 100%;
-}
-*/
 
 .card-heading {
   margin-top: 8px;
