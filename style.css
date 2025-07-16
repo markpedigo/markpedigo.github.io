@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
+/*
 body {
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   color: #505962;
   background-color: snow;
+}
+*/
+
+body {
+  background-color: #f9f9f9;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
 }
 
 h1 {
@@ -15,6 +23,7 @@ h1 {
   font-size: 32px;
 }
 
+/*
 h2 {
   font: american typewriter;
   margin-top: 20px;
@@ -22,6 +31,16 @@ h2 {
   /* font-weight: bold; */
   font-size: 24px;
 }
+*/
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: #333;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
 
 h3 {
   font: american typewriter;
@@ -59,9 +78,22 @@ iframe {
   padding: 0;
 }
 
+/*
 article {
-  /* border: 1px solid red; */
   margin: 20mm;
+}
+*/
+article {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.03);
+  border-radius: 8px;
+}
+
+hr {
+  margin: 2rem 0;
 }
 
 .playlist-container {
@@ -194,16 +226,33 @@ th, td {
   animation: wiggle 0.3s ease-in-out;
 }
 
+/*
 .card {
   min-height: 100%;
 }
+*/
 
 .card-heading {
-  /* font-family: "American Typewriter", serif; */
   margin-top: 8px;
   margin-bottom: 20px;
   color: #1a0000;
   font-size: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #004080;
 }
 
 /* Bootstrap Break Points
