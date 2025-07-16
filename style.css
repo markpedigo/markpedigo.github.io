@@ -31,15 +31,6 @@ h3 {
   font-size: 16px;
 }
 
-h1-cards {
-  font: american typewriter;
-  margin-top: 8px;
-  margin-bottom: 20px;
-  color: #1a0000;
-  /* font-weight: bold; */
-  font-size: 20px;
-}
-
 a {
   color: steelblue;
 }
@@ -199,10 +190,21 @@ th, td {
   100% { transform: rotate(0deg); }
 }
 
-.card.wiggle {
-  transition: transform 0.2s;
+.card.wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
 }
 
+.card {
+  min-height: 100%;
+}
+
+.card-heading {
+  font-family: "American Typewriter", serif;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #1a0000;
+  font-size: 20px;
+}
 
 /* Bootstrap Break Points
 
