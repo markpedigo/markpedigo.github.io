@@ -182,6 +182,20 @@ th, td {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(1deg); }
+  50%  { transform: rotate(-1deg); }
+  75%  { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.card.wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
