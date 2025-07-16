@@ -223,6 +223,26 @@ th, td {
   color: SteelBlue !important;
 }
 
+.client-logo-scroll-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  border-bottom: 1px solid #eee;
+}
+
+.client-logo {
+  max-height: 50px;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.client-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
