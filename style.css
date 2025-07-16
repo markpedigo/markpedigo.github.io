@@ -10,7 +10,9 @@ body {
 */
 
 body {
-  background-color: #f9f9f9;
+  color: #505962;
+  background-color: snow;
+  /* background-color: #f9f9f9; */
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
