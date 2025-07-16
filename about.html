@@ -150,8 +150,14 @@
   <p>
     I’ve worked with organizations across healthcare, education, government, and tech.
   </p>
-  <div class="client-logo-scroll-wrapper">
-    <div class="d-flex flex-nowrap overflow-auto py-2">
+<div class="position-relative">
+    <!-- Left Arrow -->
+    <button class="scroll-arrow left-arrow" onclick="scrollLogos(-1)">
+      &#10094;
+    </button>
+
+    <!-- Logo Container -->
+    <div id="logoScroll" class="d-flex flex-nowrap overflow-auto client-logo-scroll-wrapper py-2">
       <div class="p-3 flex-shrink-0">
         <img src="/img/logos/datacamp.png" alt="DataCamp" class="client-logo">
       </div>
@@ -177,8 +183,12 @@
         <img src="/img/logos/1904labs.png" alt="1904labs" class="client-logo">
       </div>
     </div>
-  </div>
 
+    <!-- Right Arrow -->
+    <button class="scroll-arrow right-arrow" onclick="scrollLogos(1)">
+      &#10095;
+    </button>
+  </div>
 </article>
 
 <footer class="text-center text-muted py-4">

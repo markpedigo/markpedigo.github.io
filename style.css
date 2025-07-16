@@ -224,23 +224,53 @@ th, td {
 }
 
 .client-logo-scroll-wrapper {
-  overflow-x: auto;
+  scroll-behavior: smooth;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-  border-bottom: 1px solid #eee;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .client-logo {
   max-height: 50px;
   max-width: 140px;
   object-fit: contain;
-  opacity: 0.85;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
 }
 
 .client-logo:hover {
+  filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
+}
+
+/* Arrows */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.scroll-arrow:hover {
+  background-color: #e9ecef;
+}
+
+.left-arrow {
+  left: -10px;
+}
+
+.right-arrow {
+  right: -10px;
 }
 
 /* Bootstrap Break Points
