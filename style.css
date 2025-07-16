@@ -257,6 +257,10 @@ th, td {
   color: #004080;
 }
 
+.navbar-brand {
+  color: SteelBlue !important;
+}
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
