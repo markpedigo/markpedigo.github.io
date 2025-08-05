@@ -232,7 +232,7 @@ th, td {
 }
 
 .client-logo {
-  max-height: 80px;
+  max-height: 65px;
   max-width: auto;
   object-fit: contain;
   filter: grayscale(100%);
