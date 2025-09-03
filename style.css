@@ -211,12 +211,18 @@ th, td {
 }
 
 .card:hover {
-  transform: scale(1.01);
+  box-shadow: 0 0 0.5rem rgba(0,0,0,0.1), 0 0.5rem 1rem rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
 }
 
 .card-title {
   font-weight: bold;
   color: #004080;
+}
+
+a.card-link-wrapper {
+  cursor: pointer;
 }
 
 .navbar-brand {
