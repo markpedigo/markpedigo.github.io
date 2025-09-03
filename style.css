@@ -221,13 +221,18 @@ th, td {
   color: #004080;
 }
 
-.card .provider {
+.provider {
   position: absolute;
   bottom: 0.75rem;
   left: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #6c757d; /* Bootstrap text-muted */
+  display: flex;
+  align-items: center;
+}
+
+.provider-logo {
+  height: 1rem;     /* Match small text size */
+  width: auto;
+  opacity: 0.8;     /* Optional: slight fade */
 }
 
 a.card-link-wrapper {
