@@ -293,6 +293,20 @@ a.card-link-wrapper {
   right: -10px;
 }
 
+.headshot {
+  float: left;
+  width: clamp(120px, 18vw, 180px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  shape-outside: circle(50%);
+  shape-margin: 1.2rem;   /* extra wrap gap */
+  margin: 0 2rem 1rem 0;  /* even more room on the right/bottom */
+  display: block;         /* avoids inline baseline weirdness */
+}
+.bio p:first-child { margin-top: 0; } /* align first line with top of image */
+
+
 /* Bootstrap Break Points
 
 Extra small (xs) devices (portrait phones, less than 576px)
