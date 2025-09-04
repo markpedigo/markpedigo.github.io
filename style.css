@@ -1,15 +1,17 @@
 /* --------------------------------
    Logo scroll (manual, deduped)
 -------------------------------- */
+
 /* Past Employers strip */
 .logo-band {
-  margin: 2.5rem auto;       /* space above and below */
-  padding-block: 1rem;       /* internal breathing room */
-  text-align: center;        /* center the heading */
+  margin: 2.5rem auto;         /* space above and below */
+  padding-block: 1rem;         /* internal breathing room */
+  text-align: center;          /* center the heading */
+  position: relative;          /* needed for edge fades */
 }
 
 .logo-band h2 {
-  margin-bottom: 1.25rem;    /* gap between heading and logos */
+  margin-bottom: 1.25rem;      /* gap between heading and logos */
   font-weight: 700;
   color: var(--subhead);
 }
@@ -18,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;                /* wider spacing between logos */
+  gap: 2.5rem;                  /* wider spacing between logos */
   overflow-x: auto;
   padding: 0.5rem 0;
   max-width: 90%;
@@ -27,11 +29,9 @@
   scrollbar-width: thin;
 }
 
-.logo-scroll::-webkit-scrollbar {
-  height: 8px;                      /* Chromium/WebKit */
-}
+.logo-scroll::-webkit-scrollbar { height: 8px; }
 .logo-scroll::-webkit-scrollbar-thumb {
-  background: #ccc; 
+  background: #ccc;
   border-radius: 4px;
 }
 
@@ -62,25 +62,27 @@
   transition: transform .2s ease, filter .2s ease, opacity .2s ease;
 }
 .client-logo:hover {
-  filter: gra
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
 
 /* Bio section */
 .bio {
   display: flex;
-  align-items: center;     /* vertical alignment */
-  gap: 1.5rem;             /* space between image and text */
+  align-items: center;          /* vertical alignment */
+  gap: 1.5rem;                  /* space between image and text */
   margin: 1.5rem auto 2rem;
-  max-width: 720px;        /* keep it from stretching full-width */
-  flex-wrap: wrap;         /* stack on very small screens */
-  text-align: left;        /* text stays left-aligned */
-  justify-content: center; /* centers as a block under the header */
+  max-width: 720px;             /* keep it from stretching full-width */
+  flex-wrap: wrap;              /* stack on very small screens */
+  text-align: left;             /* text stays left-aligned */
+  justify-content: center;      /* center the whole block under header */
 }
 
 .bio .headshot {
   width: 160px;
   height: 160px;
-  border-radius: 50%;      /* circular crop */
+  border-radius: 50%;           /* circular crop */
   object-fit: cover;
   flex-shrink: 0;
 }
-
