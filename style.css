@@ -1,102 +1,60 @@
 /* --------------------------------
-   Logo scroll (manual, deduped)
+   Bio headshot with circular wrap
 -------------------------------- */
+.bio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;       /* align photo + text vertically */
+  gap: 1.5rem;               /* space between image and text */
+  margin: 1.5rem auto 2rem;  /* balance spacing */
+  max-width: 720px;          /* don’t stretch full-width */
+  flex-wrap: wrap;           /* stack neatly on small screens */
+  text-align: left;
+}
 
-/* Past Employers strip */
+.bio .headshot {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;        /* circle */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* --------------------------------
+   Logo scroll (deduped)
+-------------------------------- */
 .logo-band {
-  margin: 2.5rem auto;         /* space above and below */
-  padding-block: 1rem;         /* internal breathing room */
-  text-align: center;          /* center the heading */
-  position: relative;          /* needed for edge fades */
+  margin: 2rem auto;         /* space above and below */
+  padding-block: 1rem;       /* internal breathing room */
+  text-align: center;        /* heading centered */
+  position: relative;        /* for edge fades */
 }
 
 .logo-band h2 {
-  margin-bottom: 1.25rem;      /* gap between heading and logos */
+  margin-bottom: 1rem;       /* gap under heading */
   font-weight: 700;
-  font-size: .9rem;
-  letter-spacing: .06rem;
-  padding-top: .9rem;
-  background-color: var(--bg)!important;
-}
-.navbar-brand img{height: 2rem;}
-.navbar-brand{color: steelblue !important;}
-.navbar-nav li{padding-right: .7rem;}
-
-/* --------------------------------
-   Jumbotron (if used)
--------------------------------- */
-.jumbotron{
-  margin-top: 5rem;
-  min-height: 20rem;
-  background: transparent;
-}
-.caption{
-  position: relative; top: 30%;
-  text-align: center; color: #fff;
-}
-.caption h1{font-weight: 700; letter-spacing: .03rem;}
-.caption h3{font-weight: 500; letter-spacing: .02rem;}
-
-/* Columns (keep if you still use float layout) */
-.column{float:left; padding: 10px;}
-.left{width: 20%;}
-.right{width: 80%;}
-.left_about{width: 40%;}
-.right_about{width: 60%;}
-
-/* Tables */
-th, td{padding: 10px 40px 20px 0;}
-
-/* --------------------------------
-   Cards
--------------------------------- */
-.card{
-  background: #fff;
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card:hover{
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-}
-.card-heading{margin: 8px 0 20px; color: var(--head); font-size: 20px;}
-.card-title{font-weight: 700; color: #004080;}
-.provider{
-  position: absolute; bottom: 0.75rem; left: 1rem;
-  display: flex; align-items: center;
-}
-.provider-logo{height: 1rem; width: auto; opacity: 0.9;}
-
-/* Subtle hover wiggle */
-@keyframes wiggle {
-  0%{transform: rotate(0)} 25%{transform: rotate(1deg)}
-  50%{transform: rotate(-1deg)} 75%{transform: rotate(1deg)} 100%{transform: rotate(0)}
-}
-.card.wiggle:hover{animation: wiggle 0.3s ease-in-out;}
-@media (prefers-reduced-motion: reduce){
-  .card.wiggle:hover{animation: none;}
+  font-size: 1.1rem;
+  color: var(--subhead);
 }
 
-/* --------------------------------
-   Logo scroll (manual)
--------------------------------- */
-.logo-scroll{
+.logo-scroll {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: var(--gap);
+  gap: 2.25rem;              /* space between logos */
   overflow-x: auto;
-  padding: 1rem;
+  padding: .5rem 0;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 100%;
   scroll-behavior: smooth;
-  scrollbar-width: thin;      /* Firefox */
+  scrollbar-width: thin;
 }
-.logo-scroll::-webkit-scrollbar{height: 8px;}        /* Chromium/WebKit */
-.logo-scroll::-webkit-scrollbar-thumb{background:#ccc; border-radius:4px;}
 
-.client-logo{
-  height: 60px;
+.logo-scroll::-webkit-scrollbar { height: 8px; }
+.logo-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+.client-logo {
+  height: 56px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -104,98 +62,26 @@ th, td{padding: 10px 40px 20px 0;}
   opacity: .8;
   transition: transform .2s ease, filter .2s ease, opacity .2s ease;
 }
-.client-logo:hover{filter: grayscale(0%); opacity: 1; transform: scale(1.05);}
-
-/* Optional arrows (position relative on parent if used) */
-.scroll-arrow{
-  position: absolute; top: 50%; transform: translateY(-50%);
-  z-index: 2; background: rgba(255,255,255,.85);
-  border: 0; font-size: 1.5rem; padding: .5rem .75rem; cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-}
-.scroll-arrow:hover{background: #e9ecef;}
-.left-arrow{left: -10px;} .right-arrow{right: -10px;}
-
-/* --------------------------------
-   Bio headshot with circular wrap
--------------------------------- */
-.bio {
-  display: flex;
-  align-items: flex-start;   /* align image with top of text */
-  gap: 2rem;                 /* space between image and text */
-  margin-bottom: 2rem;
-  flex-wrap: wrap;           /* allows stacking on small screens */
+.client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.bio .headshot {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;            /* don’t let the image shrink */
-}
-
-/* --------------------------------
-   Misc
--------------------------------- */
-hr{margin: 2rem 0;}
-.error-container{
-  text-align: center; background: #fff; padding: 20px;
-  border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.1);
-}
-
-/* Responsive tweaks */
-@media (max-width: 576px){
-  .provider{position: static; margin-top: .75rem;}
-  .client-logo{height: 48px;}
-}
-
-/* constrain and balance */
-.container-narrow { max-width: 1040px; }
-
-/* hero: a little space, not a canyon */
-header.section { padding-bottom: 1rem; }
-
-/* section titles: tighter above, room below */
-h2 { margin-top: 1.25rem; margin-bottom: .75rem; }
-
-/* logo band */
-.logo-band { 
-  margin: .5rem auto 2rem;         /* space above/below the logos */
-  position: relative; 
-}
-
-/* scroll row with air */
-.logo-scroll {
-  display: flex;
-  align-items: center;
-  gap: 2.25rem;                     /* more space between logos */
-  overflow-x: auto;
-  padding: .5rem 0;                 /* internal breathing room */
-  margin: 0 auto;
-  max-width: 100%;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-}
-
-/* subtle edge fades so it doesn’t feel boxed in */
+/* subtle edge fades */
 .logo-band::before,
 .logo-band::after {
   content: "";
-  position: absolute; top: 0; bottom: 0;
-  width: 48px; pointer-events: none;
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 48px;
+  pointer-events: none;
 }
 .logo-band::before {
   left: 0;
-  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(to right, var(--bg), rgba(255,255,255,0));
 }
 .logo-band::after {
   right: 0;
-  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(to left, var(--bg), rgba(255,255,255,0));
 }
-
-/* logo sizing (consistent, not huge) */
-.client-logo { height: 56px; width: auto; flex-shrink: 0; }
-
-/* card grid: a touch more vertical air between rows on small screens */
-.row > [class*="col-"] { margin-bottom: 1.5rem; }
