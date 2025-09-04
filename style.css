@@ -181,5 +181,5 @@ main > section {
 :root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
 
 .navbar {
-  background-color: #636fda4a;
+  background-color: #3d4ddbd8;
 }
