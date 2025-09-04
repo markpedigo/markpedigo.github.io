@@ -199,3 +199,11 @@ main > section {
 .navbar-brand:hover {
   color: #aad4ff !important;  /* soft light blue on hover */
 }
+
+/* Page content width identical to homepage grid */
+.content-wrap {
+  max-width: 1100px;     /* tune to your home grid width */
+  margin: 0 auto;        /* center */
+  padding: 0 1rem;       /* inner gutter */
+}
+
