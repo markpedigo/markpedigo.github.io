@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+body {
+  overflow-x: hidden;
+  color: #505962;
+  background-color: snow;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  font: american typewriter;
+  margin-top: 20px;
+  color: #1a0000;
+  font-size: 32px;
+}
+
+h2 {
+  font: american typewriter;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: #333;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+h3 {
+  font: american typewriter;
+  margin-top: 20px;
+  color: #1a0000;
+  font-size: 16px;
+}
+
+a {
+  color: steelblue;
+}
+
+.image-left {
+  float: left;
+  margin-right: 15px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  margin: 5mm;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+.playlist-container {
+  margin: 20mm;
+  position: relative;
+  padding-bottom: 40%;
+  height: 0;
+  overflow: hidden;
+  max-width: 35%;
+  height: auto;
+}
+
+.playlist-container iframe,
+.playlist-container object,
+.playlist-container embed {
+  position: absolute;
+  top: 0;
+  left: 30mm;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*--- Navigation ---*/
+.navbar {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  padding-top: .9rem;
+  background-color: snow!important;
+}
+.navbar-brand img {
+  height: 2rem;
+}
+.navbar-nav li {
+  padding-right: .7rem;
+}
+
+/*--- Jumbotron ---*/
+.jumbotron {
+  margin-top: 5rem;
+  height: 35rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+.about {
+  background-image: url("img/about.jpg")
+}
+.blog {
+  background-image: url("img/blog.jpg")
+}
+.contact {
+  background-image: url("img/contact.jpg")
+}
+.music {
+  background-image: url("img/piano.jpg")
+}
+.professional_experience {
+  background-image: url("img/professional.jpg")
+}
+.projects {
+  background-image: url("img/projects.jpg")
+}
+.caption {
+  position: relative;
+  top: 30%;
+  text-align: center;
+  color: white;
+}
+.caption h1 {
+  font-size: 3.8rem;
+  font-weight: 200;
+  letter-spacing: .3rem;
+  padding-bottom: 1 rem;
+}
+.caption h3 {
+  font-size: 1rem;
+  font-weight: 100;
+  color: white;
+  letter-spacing: .5rem;
+  padding-bottom: 1 rem;
+  letter-spacing: 0rem;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  width: 80%;
+}
+
+.left_about {
+  width: 40%;
+}
+
+.right_about {
+  width: 60%;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+}
+
+.error-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(1deg); }
+  50%  { transform: rotate(-1deg); }
+  75%  { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.card.wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+.card-heading {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #1a0000;
+  font-size: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 0.5rem rgba(0,0,0,0.1), 0 0.5rem 1rem rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #004080;
+}
+
+.provider {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.provider-logo {
+  height: 1rem;     /* Match small text size */
+  width: auto;
+  opacity: 0.8;     /* Optional: slight fade */
+}
+
+a.card-link-wrapper {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  color: SteelBlue !important;
+}
+
+.client-logo-scroll-wrapper {
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.client-logo {
+  max-height: 55px;
+  max-width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+
+.client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Arrows */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.scroll-arrow:hover {
+  background-color: #e9ecef;
+}
+
+.left-arrow {
+  left: -10px;
+}
+
+.right-arrow {
+  right: -10px;
+}
+
+.headshot {
+  float: left;
+  width: clamp(120px, 18vw, 180px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  shape-outside: circle(50%);
+  shape-margin: 1.2rem;   /* extra wrap gap */
+  margin: 0 2rem 1rem 0;  /* even more room on the right/bottom */
+  display: block;         /* avoids inline baseline weirdness */
+}
+.bio p:first-child { margin-top: 0; } /* align first line with top of image */
+
+.logo-scroll {
+  display: flex;
+  gap: 2rem;                /* space between logos */
+  overflow-x: auto;         /* allows sideways scroll */
+  padding: 1rem;
+  scroll-behavior: smooth;  /* smooth swipe */
+  scrollbar-width: thin;    /* Firefox */
+}
+
+.logo-scroll {
+  display: flex;
+  justify-content: center;  /* centers the logos row */
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 0 auto;           /* centers container */
+  max-width: 90%;           /* keeps bar centered within page */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.logo-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.logo-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.client-logo {
+  height: 60px;
+  flex-shrink: 0;
+}
+
+
+/* Bootstrap Break Points
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+*/

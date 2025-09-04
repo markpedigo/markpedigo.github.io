@@ -1,361 +1,216 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+/* --------------------------------
+   Base + Typography
+-------------------------------- */
+:root{
+  --bg: snow;
+  --text: #505962;
+  --head: #1a0000;
+  --subhead: #333;
+  --link: steelblue;
+  --brand: #007bff;
+  --card-border: #ddd;
+  --shadow: 0 0 0.5rem rgba(0,0,0,0.1), 0 0.5rem 1rem rgba(0,0,0,0.1);
+  --radius: 8px;
+  --gap: 2rem;
+}
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+html{box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+
+body{
   overflow-x: hidden;
-  color: #505962;
-  background-color: snow;
-  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.6;
-}
-
-h1 {
-  font: american typewriter;
-  margin-top: 20px;
-  color: #1a0000;
-  font-size: 32px;
-}
-
-h2 {
-  font: american typewriter;
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  color: #333;
-  border-left: 4px solid #007bff;
-  padding-left: 10px;
-}
-
-h3 {
-  font: american typewriter;
-  margin-top: 20px;
-  color: #1a0000;
-  font-size: 16px;
-}
-
-a {
-  color: steelblue;
-}
-
-.image-left {
-  float: left;
-  margin-right: 15px;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-iframe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
   margin: 0;
-  padding: 0;
 }
 
-article {
-  margin: 5mm;
+/* Headings use a consistent scale */
+h1,h2,h3{margin: 0 0 0.75rem 0; color: var(--head); font-weight: 700;}
+h1{font-size: clamp(2rem, 3vw, 2.5rem);}
+h2{font-size: clamp(1.5rem, 2.2vw, 1.9rem); color: var(--subhead); border-left: 4px solid var(--brand); padding-left: 10px;}
+h3{font-size: 1.125rem; color: var(--head);}
+
+a{color: var(--link); text-decoration: none;}
+a:hover{text-decoration: underline;}
+
+/* --------------------------------
+   Layout helpers
+-------------------------------- */
+.center{display:block; margin-inline:auto;}
+.image-left{float:left; margin: 0 15px 10px 0;}
+
+/* Use rem instead of mm */
+article{margin: 1.25rem;}
+
+/* Section padding utility */
+.section{padding-block: 2rem;}
+
+/* --------------------------------
+   Media: scope iframes
+-------------------------------- */
+.embed-full{           /* use this class where you actually want full-screen embeds */
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; margin: 0; padding: 0;
 }
 
-hr {
-  margin: 2rem 0;
-}
-
-.playlist-container {
-  margin: 20mm;
+/* Playlist embed that keeps aspect ratio */
+.playlist-container{
   position: relative;
-  padding-bottom: 40%;
-  height: 0;
+  width: min(560px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem auto;
   overflow: hidden;
-  max-width: 35%;
-  height: auto;
 }
-
 .playlist-container iframe,
 .playlist-container object,
-.playlist-container embed {
-  position: absolute;
-  top: 0;
-  left: 30mm;
-  width: 100%;
-  height: 100%;
+.playlist-container embed{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
 }
 
-
-/*--- Navigation ---*/
-.navbar {
+/* --------------------------------
+   Navbar
+-------------------------------- */
+.navbar{
   text-transform: uppercase;
   font-weight: 700;
   font-size: .9rem;
-  letter-spacing: .1rem;
+  letter-spacing: .06rem;
   padding-top: .9rem;
-  background-color: snow!important;
+  background-color: var(--bg)!important;
 }
-.navbar-brand img {
-  height: 2rem;
-}
-.navbar-nav li {
-  padding-right: .7rem;
-}
+.navbar-brand img{height: 2rem;}
+.navbar-brand{color: steelblue !important;}
+.navbar-nav li{padding-right: .7rem;}
 
-/*--- Jumbotron ---*/
-.jumbotron {
+/* --------------------------------
+   Jumbotron (if used)
+-------------------------------- */
+.jumbotron{
   margin-top: 5rem;
-  height: 35rem;
-  background-color: rgba(0, 0, 0, 0);
+  min-height: 20rem;
+  background: transparent;
 }
-.about {
-  background-image: url("img/about.jpg")
+.caption{
+  position: relative; top: 30%;
+  text-align: center; color: #fff;
 }
-.blog {
-  background-image: url("img/blog.jpg")
-}
-.contact {
-  background-image: url("img/contact.jpg")
-}
-.music {
-  background-image: url("img/piano.jpg")
-}
-.professional_experience {
-  background-image: url("img/professional.jpg")
-}
-.projects {
-  background-image: url("img/projects.jpg")
-}
-.caption {
-  position: relative;
-  top: 30%;
-  text-align: center;
-  color: white;
-}
-.caption h1 {
-  font-size: 3.8rem;
-  font-weight: 200;
-  letter-spacing: .3rem;
-  padding-bottom: 1 rem;
-}
-.caption h3 {
-  font-size: 1rem;
-  font-weight: 100;
-  color: white;
-  letter-spacing: .5rem;
-  padding-bottom: 1 rem;
-  letter-spacing: 0rem;
-}
+.caption h1{font-weight: 700; letter-spacing: .03rem;}
+.caption h3{font-weight: 500; letter-spacing: .02rem;}
 
-.column {
-  float: left;
-  padding: 10px;
-}
+/* Columns (keep if you still use float layout) */
+.column{float:left; padding: 10px;}
+.left{width: 20%;}
+.right{width: 80%;}
+.left_about{width: 40%;}
+.right_about{width: 60%;}
 
-.left {
-  width: 20%;
-}
+/* Tables */
+th, td{padding: 10px 40px 20px 0;}
 
-.right {
-  width: 80%;
+/* --------------------------------
+   Cards
+-------------------------------- */
+.card{
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.left_about {
-  width: 40%;
-}
-
-.right_about {
-  width: 60%;
-}
-
-th, td {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-right: 40px;
-}
-
-.error-container {
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes wiggle {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(1deg); }
-  50%  { transform: rotate(-1deg); }
-  75%  { transform: rotate(1deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.card.wiggle:hover {
-  animation: wiggle 0.3s ease-in-out;
-}
-
-.card-heading {
-  margin-top: 8px;
-  margin-bottom: 20px;
-  color: #1a0000;
-  font-size: 20px;
-}
-
-.card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.1), 0 0.5rem 1rem rgba(0,0,0,0.1);
+.card:hover{
+  box-shadow: var(--shadow);
   transform: translateY(-2px);
-  transition: all 0.2s ease-in-out;
+}
+.card-heading{margin: 8px 0 20px; color: var(--head); font-size: 20px;}
+.card-title{font-weight: 700; color: #004080;}
+.provider{
+  position: absolute; bottom: 0.75rem; left: 1rem;
+  display: flex; align-items: center;
+}
+.provider-logo{height: 1rem; width: auto; opacity: 0.9;}
+
+/* Subtle hover wiggle */
+@keyframes wiggle {
+  0%{transform: rotate(0)} 25%{transform: rotate(1deg)}
+  50%{transform: rotate(-1deg)} 75%{transform: rotate(1deg)} 100%{transform: rotate(0)}
+}
+.card.wiggle:hover{animation: wiggle 0.3s ease-in-out;}
+@media (prefers-reduced-motion: reduce){
+  .card.wiggle:hover{animation: none;}
 }
 
-.card-title {
-  font-weight: bold;
-  color: #004080;
-}
-
-.provider {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 1rem;
+/* --------------------------------
+   Logo scroll (manual)
+-------------------------------- */
+.logo-scroll{
   display: flex;
-  align-items: center;
-}
-
-.provider-logo {
-  height: 1rem;     /* Match small text size */
-  width: auto;
-  opacity: 0.8;     /* Optional: slight fade */
-}
-
-a.card-link-wrapper {
-  cursor: pointer;
-}
-
-.navbar-brand {
-  color: SteelBlue !important;
-}
-
-.client-logo-scroll-wrapper {
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  justify-content: center;
+  gap: var(--gap);
   overflow-x: auto;
-  overflow-y: hidden;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 90%;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;      /* Firefox */
 }
+.logo-scroll::-webkit-scrollbar{height: 8px;}        /* Chromium/WebKit */
+.logo-scroll::-webkit-scrollbar-thumb{background:#ccc; border-radius:4px;}
 
-.client-logo {
-  max-height: 55px;
-  max-width: auto;
+.client-logo{
+  height: 60px;
+  width: auto;
   object-fit: contain;
+  flex-shrink: 0;
   filter: grayscale(100%);
-  opacity: 0.75;
-  transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+  opacity: .8;
+  transition: transform .2s ease, filter .2s ease, opacity .2s ease;
 }
+.client-logo:hover{filter: grayscale(0%); opacity: 1; transform: scale(1.05);}
 
-.client-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
+/* Optional arrows (position relative on parent if used) */
+.scroll-arrow{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 2; background: rgba(255,255,255,.85);
+  border: 0; font-size: 1.5rem; padding: .5rem .75rem; cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
 }
+.scroll-arrow:hover{background: #e9ecef;}
+.left-arrow{left: -10px;} .right-arrow{right: -10px;}
 
-/* Arrows */
-.scroll-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: none;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.2s ease;
-}
-
-.scroll-arrow:hover {
-  background-color: #e9ecef;
-}
-
-.left-arrow {
-  left: -10px;
-}
-
-.right-arrow {
-  right: -10px;
-}
-
-.headshot {
+/* --------------------------------
+   Bio headshot with circular wrap
+-------------------------------- */
+.headshot{
   float: left;
   width: clamp(120px, 18vw, 180px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   shape-outside: circle(50%);
-  shape-margin: 1.2rem;   /* extra wrap gap */
-  margin: 0 2rem 1rem 0;  /* even more room on the right/bottom */
-  display: block;         /* avoids inline baseline weirdness */
+  -webkit-shape-outside: circle(50%);
+  shape-margin: 1.2rem;
+  margin: 0 2rem 1rem 0;
+  display: block;
 }
-.bio p:first-child { margin-top: 0; } /* align first line with top of image */
+.bio p:first-child{margin-top: 0}
 
-.logo-scroll {
-  display: flex;
-  gap: 2rem;                /* space between logos */
-  overflow-x: auto;         /* allows sideways scroll */
-  padding: 1rem;
-  scroll-behavior: smooth;  /* smooth swipe */
-  scrollbar-width: thin;    /* Firefox */
-}
-
-.logo-scroll {
-  display: flex;
-  justify-content: center;  /* centers the logos row */
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem;
-  margin: 0 auto;           /* centers container */
-  max-width: 90%;           /* keeps bar centered within page */
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
+/* --------------------------------
+   Misc
+-------------------------------- */
+hr{margin: 2rem 0;}
+.error-container{
+  text-align: center; background: #fff; padding: 20px;
+  border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
-.logo-scroll::-webkit-scrollbar {
-  height: 8px;
+/* Responsive tweaks */
+@media (max-width: 576px){
+  .provider{position: static; margin-top: .75rem;}
+  .client-logo{height: 48px;}
 }
-.logo-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-
-.client-logo {
-  height: 60px;
-  flex-shrink: 0;
-}
-
-
-/* Bootstrap Break Points
-
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-
-*/
