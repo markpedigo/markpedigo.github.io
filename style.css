@@ -36,12 +36,12 @@ header[role="banner"] .bio > div {
   position: relative;           /* for edge fades */
 }
 
-.logo-band h2 {
+/* .logo-band h2 {
   margin-bottom: .75rem;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--subhead);
-}
+} */
 
 .logo-scroll {
   display: flex;
