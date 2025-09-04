@@ -85,3 +85,74 @@
   right: 0;
   background: linear-gradient(to left, var(--bg), rgba(255,255,255,0));
 }
+
+/* === HERO / BIO FIX (authoritative overrides) === */
+header[role="banner"] .bio{
+  display: flex;
+  flex-direction: row;          /* image left, text right */
+  justify-content: flex-start;
+  align-items: flex-start;      /* align to top edge */
+  gap: 1.25rem;
+  max-width: 920px;
+  margin: 1rem auto 1.25rem;    /* tighten gap under name */
+  text-align: left;             /* kill header's text-center for this block */
+  flex-wrap: nowrap;            /* keep side-by-side on desktop */
+}
+
+header[role="banner"] .bio .headshot{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 160px;              /* fixed column for the photo */
+}
+
+header[role="banner"] .bio > div{
+  flex: 1 1 auto;               /* text column */
+  min-width: 260px;
+}
+
+/* === LOGO BAND SPACING (authoritative) === */
+.logo-band{
+  margin: 1.25rem auto 1.75rem; /* less canyon, still breathing room */
+  padding-block: .5rem;
+  position: relative;
+  text-align: center;
+}
+
+.logo-band h2{ margin-bottom: .75rem; }
+
+/* single source of truth for the scroll row */
+.logo-scroll{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+  overflow-x: auto;
+  padding: .5rem 0;
+  max-width: 90%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+.logo-scroll::-webkit-scrollbar{ height: 8px; }
+.logo-scroll::-webkit-scrollbar-thumb{ background:#ccc; border-radius:4px; }
+
+.client-logo{
+  height: 56px; width: auto; object-fit: contain; flex-shrink: 0;
+  filter: grayscale(100%); opacity: .8;
+  transition: transform .2s, filter .2s, opacity .2s;
+}
+.client-logo:hover{ filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+/* keep the edge fades working */
+.logo-band::before, .logo-band::after{
+  content:""; position:absolute; top:0; bottom:0; width:48px; pointer-events:none;
+}
+.logo-band::before{ left:0;  background:linear-gradient(to right, var(--bg), rgba(255,255,255,0)); }
+.logo-band::after { right:0; background:linear-gradient(to left,  var(--bg), rgba(255,255,255,0)); }
+
+/* mobile: allow stacking cleanly */
+@media (max-width: 600px){
+  header[role="banner"] .bio{ flex-wrap: wrap; }
+}
