@@ -164,3 +164,22 @@ main > section {
 
 /* the logo band stays full-bleed */
 .logo-band { max-width: none; padding-left: 0; padding-right: 0; }
+
+/* unified section headings */
+:root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
+
+body h2 {
+  margin-top: 1.25rem;
+  margin-bottom: .75rem;
+  font-weight: 700;
+  font-size: var(--h2-size);
+  line-height: 1.2;
+  color: var(--subhead);
+  text-align: left;
+  border-left: 4px solid var(--brand);
+  padding-left: 10px;
+}
+
+/* remove any leftover centering from the logo band */
+.logo-band { text-align: left; }
+
