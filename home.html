@@ -7,11 +7,26 @@
   <meta name="description" content="Mark Pedigo is a technical writer and data scientist who turns complex ideas in Python, ML, and math into clear, useful content.">
   <link rel="canonical" href="https://markpedigo.github.io/">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mark Pedigo",
+    "url": "https://markpedigo.github.io/",
+    "email": "mailto:mark.pedigo@gmail.com",
+    "jobTitle": "Technical Content Writer",
+    "sameAs": ["https://www.linkedin.com/in/markpedigo","https://github.com/markpedigo"],
+    "description": "PhD data scientist and technical writer focused on clear explanations of Python, ML, and mathematics."
+  }
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:title" content="Mark Pedigo — Technical Content Writer · Data Scientist">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://markpedigo.github.io/">
   <meta property="og:image" content="https://markpedigo.github.io/img/headshot-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:description" content="I build models, fight fraud, and explain complex systems so people can use them.">
   <meta property="og:site_name" content="Mark Pedigo">
 
@@ -32,38 +47,18 @@
   <!-- Hero -->
   <header class="container text-center section" role="banner">
     <h1>Mark Pedigo, PhD</h1>
-    <p class="lead text-secondary mb-1">Mathematician · Data Scientist · Technical Content Writer · Educator</p>
-    <p class="text-muted small mb-0">
-      Data scientist. Dog lover. Jazz pianist. Husband. Mathematician. Programmer. Teacher. Tech enthusiast. Tech skeptic. Writer.<br>
-      Not necessarily in that order.
+    <p>
+      I turn complex machine learning and math into clear content.
     </p>
     <div class="mt-3">
       <a href="https://www.linkedin.com/in/markpedigo/" target="_blank" rel="noopener noreferrer" class="mr-3">LinkedIn</a>
       <a href="mailto:mark.pedigo@gmail.com">mark.pedigo@gmail.com</a>
+      <a href="markpedigo.github.io" target="_blank" rel="noopener noreferrer" class="mr-3">GitHub</a>
+      
     </div>
   </header>
 
   <main id="main" role="main">
-    <!-- Bio / Highlights -->
-    <section class="container section">
-      <div class="bio">
-        <img src="img/headshot.jpeg" alt="Headshot of Mark Pedigo" class="headshot">
-
-        <div>
-          <ul class="mb-3">
-            <li>Writing: Technical explainer tutorials with DataCamp</li>
-            <li>Education: Decades of university teaching</li>
-            <li>Healthcare: Predictive modeling and fraud detection</li>
-            <li>NASA: NextGen cost-estimating software</li>
-          </ul>
-
-          <p>
-            Need technical content in machine learning, data science, or mathematics? Let's talk.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Selected Content -->
     <section class="section">
       <div class="container">
@@ -175,11 +170,40 @@
       </div>
     </section>
 
+        <!-- Bio / Highlights -->
+    <section class="container section">
+      <div class="bio">
+        <img
+          class="headshot"
+          src="img/headshot-320.jpg"
+          srcset="img/headshot-320.jpg 1x, img/headshot-640.jpg 2x"
+          width="160" height="160"
+          alt="Headshot of Mark Pedigo"
+          loading="eager" fetchpriority="high">
+
+        <div>
+          <ul class="mb-3">
+            <li>Writing: Technical explainer tutorials with DataCamp</li>
+            <li>Education: Decades of university teaching</li>
+            <li>Healthcare: Predictive modeling and fraud detection</li>
+            <li>NASA: NextGen cost-estimating software</li>
+          </ul>
+
+          <p>
+            Need technical content in machine learning, data science, or mathematics? Let's talk.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Podcast -->
     <section class="container section" aria-labelledby="podcast">
       <h2 id="podcast">Podcast Interview</h2>
       <p class="mb-0">
-        <a href="https://edrm.net/2025/02/illumination-zone-episode-195-dr-mark-pedigo-sits-down-with-kaylee-mary/"
+        <a aria-label="Listen: EDRM Illumination Zone episode with Mark Pedigo"
+          href="https://edrm.net/2025/02/illumination-zone-episode-195-dr-mark-pedigo-sits-down-with-kaylee-mary/"
+          target="_blank" rel="noopener noreferrer">
+        <!-- <a href="https://edrm.net/2025/02/illumination-zone-episode-195-dr-mark-pedigo-sits-down-with-kaylee-mary/"
            target="_blank" rel="noopener noreferrer">
           <img
             src="/img/edrm.jpg"
@@ -189,7 +213,7 @@
             height="80"
             style="border-radius: 8px;"
             loading="lazy">
-        </a>
+        </a> -->
         “Dr. Mark Pedigo, a PhD data scientist, sits down with Kaylee &amp; Mary to talk about his journey to data science, the life and death problems he has addressed using data science, including a study of mothers and infants in Mississippi, and another diving into data about opioid prescribing providers…”
       </p>
       <div style="clear: both;"></div>
@@ -210,8 +234,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
