@@ -306,6 +306,35 @@ a.card-link-wrapper {
 }
 .bio p:first-child { margin-top: 0; } /* align first line with top of image */
 
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.logo-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.client-logo {
+  height: 60px;   /* adjust as needed */
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
 /* Bootstrap Break Points
 
