@@ -96,3 +96,17 @@ header[role="banner"] .bio > div {
 @media (max-width: 600px) {
   header[role="banner"] .bio { flex-wrap: wrap; }
 }
+
+/* full-bleed page */
+body { margin: 0; }
+
+/* make all containers full-width, no side padding */
+.container, .container-narrow, .container-fluid {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* optional: remove grid gutters for a true edge-to-edge grid */
+.row.no-gutters { margin-left: 0; margin-right: 0; }
+.row.no-gutters > [class*="col-"] { padding-left: 0; padding-right: 0; }
