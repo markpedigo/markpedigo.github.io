@@ -179,3 +179,7 @@ main > section {
 
 /* unified section headings */
 :root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
+
+.navbar {
+  background-color: #1c2e4a; /* deep navy */
+}
