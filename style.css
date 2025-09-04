@@ -180,6 +180,21 @@ main > section {
 /* unified section headings */
 :root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
 
+/* Navbar */
 .navbar {
-  background-color: #162befd8;
+  background-color: #091478d8 !important;
+}
+
+/* Navbar links */
+.navbar a,
+.navbar-nav .nav-link,
+.navbar-brand {
+  color: #ffffff !important;  /* force white */
+}
+
+/* Navbar links hover */
+.navbar a:hover,
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+  color: #aad4ff !important;  /* soft light blue on hover */
 }
