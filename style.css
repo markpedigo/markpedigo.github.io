@@ -315,8 +315,20 @@ a.card-link-wrapper {
   scrollbar-width: thin;    /* Firefox */
 }
 
+.logo-scroll {
+  display: flex;
+  justify-content: center;  /* centers the logos row */
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 0 auto;           /* centers container */
+  max-width: 90%;           /* keeps bar centered within page */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
 .logo-scroll::-webkit-scrollbar {
-  height: 8px;              /* Chrome/Safari/Edge */
+  height: 8px;
 }
 .logo-scroll::-webkit-scrollbar-thumb {
   background: #ccc;
@@ -324,9 +336,10 @@ a.card-link-wrapper {
 }
 
 .client-logo {
-  height: 60px;             /* adjust logo size */
-  flex-shrink: 0;           /* prevents shrinking */
+  height: 60px;
+  flex-shrink: 0;
 }
+
 
 /* Bootstrap Break Points
 
