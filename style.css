@@ -171,6 +171,11 @@ main > section {
   max-width: 1040px;    /* same as .container-narrow if you're using it */
 }
 
+/* align logo-band heading with other section headers */
+.logo-band h2 {
+  margin-left: 15px;      /* Bootstrap’s .container padding */
+  margin-right: 15px;
+}
 
 /* unified section headings */
 :root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
