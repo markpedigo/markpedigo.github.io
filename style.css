@@ -63,3 +63,24 @@
 }
 .client-logo:hover {
   filter: gra
+
+/* Bio section */
+.bio {
+  display: flex;
+  align-items: center;     /* vertical alignment */
+  gap: 1.5rem;             /* space between image and text */
+  margin: 1.5rem auto 2rem;
+  max-width: 720px;        /* keep it from stretching full-width */
+  flex-wrap: wrap;         /* stack on very small screens */
+  text-align: left;        /* text stays left-aligned */
+  justify-content: center; /* centers as a block under the header */
+}
+
+.bio .headshot {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;      /* circular crop */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
