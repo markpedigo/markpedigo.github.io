@@ -162,24 +162,15 @@ main > section {
   padding-right: 0 !important;
 }
 
-/* the logo band stays full-bleed */
-.logo-band { max-width: none; padding-left: 0; padding-right: 0; }
+/* keep section headings consistently inset */
+.logo-band {
+  text-align: left;
+  padding-left: 1rem;   /* matches card/grid padding */
+  padding-right: 1rem;  /* keeps symmetry */
+  margin: 1.5rem auto;
+  max-width: 1040px;    /* same as .container-narrow if you're using it */
+}
+
 
 /* unified section headings */
 :root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
-
-body h2 {
-  margin-top: 1.25rem;
-  margin-bottom: .75rem;
-  font-weight: 700;
-  font-size: var(--h2-size);
-  line-height: 1.2;
-  color: var(--subhead);
-  text-align: left;
-  border-left: 4px solid var(--brand);
-  padding-left: 10px;
-}
-
-/* remove any leftover centering from the logo band */
-.logo-band { text-align: left; }
-
