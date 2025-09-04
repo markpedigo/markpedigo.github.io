@@ -110,3 +110,22 @@ body { margin: 0; }
 /* optional: remove grid gutters for a true edge-to-edge grid */
 .row.no-gutters { margin-left: 0; margin-right: 0; }
 .row.no-gutters > [class*="col-"] { padding-left: 0; padding-right: 0; }
+
+/* content rails: apply to all sections inside <main> */
+main > section {
+  max-width: 1140px;      /* pick 1040px if you prefer tighter */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;     /* gutter */
+  padding-right: 1rem;
+}
+
+/* opt-out utility for any future full-bleed sections */
+.full-bleed {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* the logo band stays full-bleed */
+.logo-band { max-width: none; padding-left: 0; padding-right: 0; }
