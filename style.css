@@ -216,3 +216,53 @@ hr{margin: 2rem 0;}
   .provider{position: static; margin-top: .75rem;}
   .client-logo{height: 48px;}
 }
+
+/* constrain and balance */
+.container-narrow { max-width: 1040px; }
+
+/* hero: a little space, not a canyon */
+header.section { padding-bottom: 1rem; }
+
+/* section titles: tighter above, room below */
+h2 { margin-top: 1.25rem; margin-bottom: .75rem; }
+
+/* logo band */
+.logo-band { 
+  margin: .5rem auto 2rem;         /* space above/below the logos */
+  position: relative; 
+}
+
+/* scroll row with air */
+.logo-scroll {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;                     /* more space between logos */
+  overflow-x: auto;
+  padding: .5rem 0;                 /* internal breathing room */
+  margin: 0 auto;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+/* subtle edge fades so it doesn’t feel boxed in */
+.logo-band::before,
+.logo-band::after {
+  content: "";
+  position: absolute; top: 0; bottom: 0;
+  width: 48px; pointer-events: none;
+}
+.logo-band::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.logo-band::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* logo sizing (consistent, not huge) */
+.client-logo { height: 56px; width: auto; flex-shrink: 0; }
+
+/* card grid: a touch more vertical air between rows on small screens */
+.row > [class*="col-"] { margin-bottom: 1.5rem; }
