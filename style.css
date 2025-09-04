@@ -186,16 +186,21 @@ th, td{padding: 10px 40px 20px 0;}
 /* --------------------------------
    Bio headshot with circular wrap
 -------------------------------- */
-.headshot {
-  float: left;
-  width: 160px;            /* fixed width */
-  height: 160px;           /* fixed height, square */
-  border-radius: 50%;      /* true circle */
-  object-fit: cover;       /* crops image to fit the square */
-  margin: 0 2rem 1rem 0;   /* spacing from text */
-  shape-outside: none;     /* disable curved text wrap */
+.bio {
+  display: flex;
+  align-items: flex-start;   /* align image with top of text */
+  gap: 2rem;                 /* space between image and text */
+  margin-bottom: 2rem;
+  flex-wrap: wrap;           /* allows stacking on small screens */
 }
-.bio p:first-child{margin-top: 0}
+
+.bio .headshot {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;            /* don’t let the image shrink */
+}
 
 /* --------------------------------
    Misc
