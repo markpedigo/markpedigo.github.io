@@ -41,6 +41,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+(function () {
+  function debounce(fn, delay=150){ let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a), delay);} }
+
+  function normalize() {
+    const cards = document.querySelectorAll('#selected-content .card, .card');
+    if (!cards.length) return;
+
+    let max = 0;
+    cards.forEach(c => {
+      c.style.height = 'auto';
+      const h = c.getBoundingClientRect().height;
+      if (h > max) max = h;
+    });
+    const px = Math.ceil(max) + 'px';
+    cards.forEach(c => { c.style.height = px; });
+  }
+
+  // run after everything is laid out
+  window.addEventListener('load', () => {
+    normalize();
+
+    // fonts can shift heights
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(normalize);
+    }
+
+    // late-loading images inside cards
+    const imgs = document.querySelectorAll('#selected-content .card img, .card img');
+    let pending = 0;
+    imgs.forEach(img => {
+      if (!img.complete) {
+        pending++;
+        img.addEventListener('load', () => {
+          if (--pending === 0) normalize();
+        });
+      }
+    });
+
+    window.addEventListener('resize', debounce(normalize));
+  });
+})();
+</script>
+
 <body>
   <a class="sr-only sr-only-focusable" href="#main">Skip to content</a>
 
@@ -208,5 +252,35 @@
   <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
   <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+    let maxHeight = 0;
+
+    // Reset and measure tallest
+    cards.forEach(card => {
+      card.style.height = "auto";
+      maxHeight = Math.max(maxHeight, card.offsetHeight);
+    });
+
+    // Apply tallest height to all
+    cards.forEach(card => {
+      card.style.height = maxHeight + "px";
+    });
+
+    // Re-run on window resize
+    window.addEventListener("resize", () => {
+      let newMax = 0;
+      cards.forEach(card => {
+        card.style.height = "auto";
+        newMax = Math.max(newMax, card.offsetHeight);
+      });
+      cards.forEach(card => {
+        card.style.height = newMax + "px";
+      });
+    });
+  });
+  </script>
+
 </body>
 </html>
