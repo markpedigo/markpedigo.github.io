@@ -268,3 +268,33 @@ main > section {
 .card.wiggle:hover {
   animation: wiggle 0.3s ease-in-out;
 }
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+  let maxHeight = 0;
+
+  // Reset and measure tallest
+  cards.forEach(card => {
+    card.style.height = "auto";
+    maxHeight = Math.max(maxHeight, card.offsetHeight);
+  });
+
+  // Apply tallest height to all
+  cards.forEach(card => {
+    card.style.height = maxHeight + "px";
+  });
+
+  // Re-run on window resize
+  window.addEventListener("resize", () => {
+    let newMax = 0;
+    cards.forEach(card => {
+      card.style.height = "auto";
+      newMax = Math.max(newMax, card.offsetHeight);
+    });
+    cards.forEach(card => {
+      card.style.height = newMax + "px";
+    });
+  });
+});
+</script>
