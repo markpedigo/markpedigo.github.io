@@ -209,10 +209,19 @@ main > section {
 
 /* Cards */
 .card {
-  background-color: #ffffff;
+  position: relative; /* make this the positioning context */
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.provider {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
 }
 
 .card:hover {
