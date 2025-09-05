@@ -226,3 +226,13 @@ main > section {
   color: #004080;
 }
 
+.card.wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+.card-heading {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #1a0000;
+  font-size: 20px;
+}
