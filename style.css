@@ -214,14 +214,25 @@ main > section {
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex: 1 1 auto;   /* cards expand equally to match tallest */
+  display: flex;
+  flex-direction: column;  
 }
 
 .provider {
   position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   display: flex;
   align-items: center;
+  opacity: 0.25;          /* faint, watermark style */
+  filter: grayscale(100%); /* desaturate */
+  pointer-events: none;   /* don’t let it catch clicks */
+}
+
+.provider-logo {
+  height: 28px;    /* small but visible */
+  width: auto;
 }
 
 .card:hover {
@@ -257,4 +268,3 @@ main > section {
 .card.wiggle:hover {
   animation: wiggle 0.3s ease-in-out;
 }
-
