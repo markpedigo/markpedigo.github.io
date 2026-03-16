@@ -1,5 +1,4 @@
 h1 {
-  /* font: american typewriter; */
   margin-top: 20px;
   color: #1a0000;
   font-size: 32px;
@@ -7,7 +6,6 @@ h1 {
 }
 
 h2 {
-  /* font: american typewriter; */
   font-size: 1.8rem;
   margin-top: 2rem;
   color: #333;
@@ -16,7 +14,6 @@ h2 {
 }
 
 h3 {
-  /* font: american typewriter; */
   margin-top: 20px;
   color: #1a0000;
   font-size: 16px;
@@ -36,15 +33,9 @@ header[role="banner"] .bio {
   align-items: flex-start;
   gap: 1.25rem;
   max-width: 920px;
-  margin: 1rem auto 0;          /* remove bottom margin */
+  margin: 1rem auto 0;
   text-align: left;
   flex-wrap: nowrap;
-}
-
-.bio-text {
-  max-width: 920px;
-  margin: 0.5rem auto 1rem;     /* small top margin only */
-  padding-left: calc(160px + 1.25rem);
 }
 
 header[role="banner"] .bio .headshot {
@@ -52,11 +43,11 @@ header[role="banner"] .bio .headshot {
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  flex: 0 0 160px;              /* fixed column for the photo */
+  flex: 0 0 160px;
 }
 
 header[role="banner"] .bio > div {
-  flex: 1 1 auto;               /* text column */
+  flex: 1 1 auto;
   min-width: 260px;
 }
 
@@ -68,6 +59,12 @@ header[role="banner"] h1 {
   text-align: left;
 }
 
+.bio-text {
+  max-width: 920px;
+  margin: 0.5rem auto 1rem;
+  padding-left: calc(160px + 1.25rem);
+}
+
 /* mobile: allow stacking cleanly */
 @media (max-width: 600px) {
   header[role="banner"] .bio { flex-wrap: wrap; }
@@ -77,34 +74,20 @@ header[role="banner"] h1 {
 body { margin: 0; }
 
 /* make all containers full-width, no side padding */
-.container, .container-narrow, .container-fluid {
+.container, .container-fluid {
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
 
-/* optional: remove grid gutters for a true edge-to-edge grid */
-.row.no-gutters { margin-left: 0; margin-right: 0; }
-.row.no-gutters > [class*="col-"] { padding-left: 0; padding-right: 0; }
-
 /* content rails: apply to all sections inside <main> */
 main > section {
-  max-width: 1140px;      /* pick 1040px if you prefer tighter */
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;     /* gutter */
+  padding-left: 1rem;
   padding-right: 1rem;
 }
-
-/* opt-out utility for any future full-bleed sections */
-.full-bleed {
-  max-width: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* unified section headings */
-:root { --h2-size: clamp(1.15rem, 1.8vw, 1.35rem); }
 
 /* Navbar */
 .navbar {
@@ -115,33 +98,33 @@ main > section {
 .navbar a,
 .navbar-nav .nav-link,
 .navbar-brand {
-  color: #ffffff !important;  /* force white */
+  color: #ffffff !important;
 }
 
 /* Navbar links hover */
 .navbar a:hover,
 .navbar-nav .nav-link:hover,
 .navbar-brand:hover {
-  color: #aad4ff !important;  /* soft light blue on hover */
+  color: #aad4ff !important;
 }
 
 /* Page content width identical to homepage grid */
 .content-wrap {
-  max-width: 1100px;     /* tune to your home grid width */
-  margin: 0 auto;        /* center */
-  padding: 0 1rem;       /* inner gutter */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Cards */
 .card {
-  position: relative; /* make this the positioning context */
+  position: relative;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  flex: 1 1 auto;   /* cards expand equally to match tallest */
+  flex: 1 1 auto;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .provider {
@@ -153,7 +136,7 @@ main > section {
 }
 
 .provider-logo {
-  height: 28px;    /* small but visible */
+  height: 28px;
   width: auto;
 }
 
@@ -172,21 +155,10 @@ main > section {
   animation: wiggle 0.3s ease-in-out;
 }
 
-.card-heading {
-  margin-top: 8px;
-  margin-bottom: 20px;
-  color: #1a0000;
-  font-size: 20px;
-}
-
 @keyframes wiggle {
   0%   { transform: rotate(0deg); }
   25%  { transform: rotate(1deg); }
   50%  { transform: rotate(-1deg); }
   75%  { transform: rotate(1deg); }
   100% { transform: rotate(0deg); }
-}
-
-.card.wiggle:hover {
-  animation: wiggle 0.3s ease-in-out;
 }
