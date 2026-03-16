@@ -55,74 +55,9 @@ header[role="banner"] .bio > div {
 }
 
 .bio-text {
-  max-width: 760px;
-  margin-top: 1rem;
-}
-
-/* --------------------------------
-   Logo scroll (deduped)
--------------------------------- */
-.logo-band {
-  margin: 1.25rem auto 1.75rem; /* less canyon, still breathing room */
-  padding-block: .5rem;
-  /* text-align: center; */
-  position: relative;           /* for edge fades */
-}
-
-/* .logo-band h2 {
-  margin-bottom: .75rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--subhead);
-} */
-
-.logo-scroll {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.25rem;                 /* space between logos */
-  overflow-x: auto;
-  padding: .5rem 0;
-  max-width: 90%;
-  margin: 0 auto;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-}
-
-.logo-scroll::-webkit-scrollbar { height: 8px; }
-.logo-scroll::-webkit-scrollbar-thumb { background:#ccc; border-radius:4px; }
-
-.client-logo {
-  height: 56px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  filter: grayscale(100%);
-  opacity: .8;
-  transition: transform .2s, filter .2s, opacity .2s;
-}
-.client-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* subtle edge fades */
-.logo-band::before,
-.logo-band::after {
-  content: "";
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 48px;
-  pointer-events: none;
-}
-.logo-band::before {
-  left: 0;
-  background: linear-gradient(to right, var(--bg), rgba(255,255,255,0));
-}
-.logo-band::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg), rgba(255,255,255,0));
+  max-width: 920px;
+  margin: 0.5rem auto 1rem;
+  padding-left: calc(160px + 1.25rem);
 }
 
 /* mobile: allow stacking cleanly */
@@ -158,21 +93,6 @@ main > section {
   max-width: none !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
-
-/* keep section headings consistently inset */
-.logo-band {
-  text-align: left;
-  padding-left: 1rem;   /* matches card/grid padding */
-  padding-right: 1rem;  /* keeps symmetry */
-  margin: 1.5rem auto;
-  max-width: 1040px;    /* same as .container-narrow if you're using it */
-}
-
-/* align logo-band heading with other section headers */
-.logo-band h2 {
-  margin-left: 15px;      /* Bootstrap’s .container padding */
-  margin-right: 15px;
 }
 
 /* unified section headings */
