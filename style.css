@@ -38,6 +38,11 @@ header[role="banner"] .bio {
   flex-wrap: nowrap;
 }
 
+header[role="banner"] .bio hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
 header[role="banner"] .bio .headshot {
   width: 160px;
   height: 160px;
@@ -49,6 +54,10 @@ header[role="banner"] .bio .headshot {
 header[role="banner"] .bio > div {
   flex: 1 1 auto;
   min-width: 260px;
+}
+
+header[role="banner"] .bio > div p:last-child {
+  margin-bottom: 0;
 }
 
 header[role="banner"] h1 {
