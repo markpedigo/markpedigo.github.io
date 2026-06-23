@@ -186,3 +186,9 @@ main > section {
   75%  { transform: rotate(1deg); }
   100% { transform: rotate(0deg); }
 }
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
